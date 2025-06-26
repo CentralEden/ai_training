@@ -66,4 +66,11 @@ AIセキュリティエンジニアは、AI システムの脆弱性対策とセ
 - **暗号ライブラリ**: Microsoft SEAL、HElib、TFHE
 - **モデル解釈**: LIME、SHAP、Captum、InterpretML
 - **セキュリティ監査**: Burp Suite、OWASP ZAP、Nessus
-- **フェデレーテッドラーニング**: PySyft、TensorFlow Federated 
+- **フェデレーテッドラーニング**: PySyft、TensorFlow Federated
+
+## 🔗 関連リンク
+
+- [← キャリアパス一覧に戻る](../ai_career_paths_guide.md)
+- [← 診断ツールに戻る](../career_path_interactive.html)
+- [機械学習エンジニア詳細](machine-learning-engineer.md)
+- [AI/MLアーキテクト詳細](ai-architect.md) 

@@ -109,6 +109,7 @@
 
 ## 🔗 関連リンク
 
+- [← キャリアパス一覧に戻る](../ai_career_paths_guide.md)
 - [← 診断ツールに戻る](../career_path_interactive.html)
 - [機械学習エンジニア詳細](machine-learning-engineer.md)
 - [AIコンサルタント詳細](ai-consultant.md)

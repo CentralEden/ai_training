@@ -66,4 +66,11 @@
 - **開発環境**: ARM Development Studio、NVIDIA Jetson、Raspberry Pi
 - **プロファイリング**: ARM Streamline、NVIDIA Nsight、Intel VTune
 - **組み込みOS**: FreeRTOS、Zephyr、Yocto Project
-- **クロスコンパイル**: GCC、Clang、CMake 
+- **クロスコンパイル**: GCC、Clang、CMake
+
+## 🔗 関連リンク
+
+- [← キャリアパス一覧に戻る](../ai_career_paths_guide.md)
+- [← 診断ツールに戻る](../career_path_interactive.html)
+- [機械学習エンジニア詳細](machine-learning-engineer.md)
+- [コンピュータビジョンエンジニア詳細](computer-vision-engineer.md) 

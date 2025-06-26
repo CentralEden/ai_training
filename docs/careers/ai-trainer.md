@@ -72,4 +72,11 @@ AIトレーナー・教育者は、企業内AI教育と人材育成の専門家�
 - **動画作成**: Camtasia、OBS Studio、Loom
 - **協働ツール**: Slack、Microsoft Teams、Zoom、Miro
 - **学習管理**: Google Colab、Jupyter Hub、Kaggle Learn
-- **評価・分析**: Google Forms、Typeform、Tableau 
+- **評価・分析**: Google Forms、Typeform、Tableau
+
+## 🔗 関連リンク
+
+- [← キャリアパス一覧に戻る](../ai_career_paths_guide.md)
+- [← 診断ツールに戻る](../career_path_interactive.html)
+- [データサイエンティスト詳細](data-scientist.md)
+- [AIコンサルタント詳細](ai-consultant.md) 

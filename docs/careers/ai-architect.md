@@ -67,4 +67,12 @@ AI/MLアーキテクトは、大規模AIシステムの全体設計を担当す�
 - **MLOps**: MLflow、Kubeflow、Apache Airflow
 - **監視**: Prometheus、Grafana、DataDog
 - **IaC**: Terraform、CloudFormation
-- **アーキテクチャ設計**: Draw.io、Lucidchart、Miro 
+- **アーキテクチャ設計**: Draw.io、Lucidchart、Miro
+
+## 🔗 関連リンク
+
+- [← キャリアパス一覧に戻る](../ai_career_paths_guide.md)
+- [← 診断ツールに戻る](../career_path_interactive.html)
+- [機械学習エンジニア詳細](machine-learning-engineer.md)
+- [データエンジニア詳細](data-engineer.md)
+- [MLOpsエンジニア詳細](mlops-engineer.md) 
