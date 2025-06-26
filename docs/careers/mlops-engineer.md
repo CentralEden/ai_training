@@ -162,7 +162,7 @@ MLOpsエンジニアは、機械学習システムの運用・自動化・基盤
 ## 🔗 関連リンク
 
 - [← キャリアパス一覧に戻る](../ai_career_paths_guide.md)
-- [← 診断ツールに戻る](../career_path_interactive.html)
+- [← 診断ツールに戻る](https://centraleden.github.io/ai_training/docs/career_path_interactive.html)
 - [機械学習エンジニア詳細](machine-learning-engineer.md)
 - [データエンジニア詳細](data-engineer.md)
 - [DevOpsエンジニア詳細](devops-engineer.md) 

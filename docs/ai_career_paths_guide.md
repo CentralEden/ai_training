@@ -4,7 +4,7 @@
 
 ## 📋 目次
 
-### 🎯 [キャリア診断ツール](career_path_interactive.html)
+### 🎯 [キャリア診断ツール](https://centraleden.github.io/ai_training/docs/career_path_interactive.html)
 - インタラクティブ診断で自分に最適なキャリアパスを発見
 - 4ステップの質問でパーソナライズされた推奨キャリアを提案
 
@@ -58,15 +58,15 @@
     - テキスト・言語処理技術の専門家
     - 技術深度: ⭐⭐⭐⭐⭐ | ビジネス関与: ⭐⭐
 
-#### 🛡️ セキュリティ・インフラ系
-
-11. **[AIセキュリティエンジニア](careers/ai-security-engineer.md)**
-    - AIシステムのセキュリティ・プライバシー保護の専門家
-    - 技術深度: ⭐⭐⭐⭐⭐ | ビジネス関与: ⭐⭐⭐
-
-12. **[エッジAIエンジニア](careers/edge-ai-engineer.md)**
+11. **[エッジAIエンジニア](careers/edge-ai-engineer.md)**
     - モバイル・IoTデバイス向けAI実装の専門家
     - 技術深度: ⭐⭐⭐⭐⭐ | ビジネス関与: ⭐⭐
+
+#### 🛡️ セキュリティ・特殊領域系
+
+12. **[AIセキュリティエンジニア](careers/ai-security-engineer.md)**
+    - AIシステムのセキュリティ・プライバシー保護の専門家
+    - 技術深度: ⭐⭐⭐⭐⭐ | ビジネス関与: ⭐⭐⭐
 
 #### 📚 教育・人材育成系
 
@@ -77,7 +77,7 @@
 ## 🚀 キャリア選択のステップ
 
 ### Step 1: 自己分析
-- [キャリア診断ツール](career_path_interactive.html)を活用
+- [キャリア診断ツール](https://centraleden.github.io/ai_training/docs/career_path_interactive.html)を活用
 - 技術志向 vs ビジネス志向の確認
 - 現在のスキルレベルの把握
 
@@ -112,7 +112,7 @@
 
 ## 🎯 次のアクション
 
-1. **[キャリア診断を受ける](career_path_interactive.html)** - 5分で完了
+1. **[キャリア診断を受ける](https://centraleden.github.io/ai_training/docs/career_path_interactive.html)** - 5分で完了
 2. **興味のあるキャリアの詳細を確認** - 上記リンクから
 3. **[学習プログラムを開始](../README.md)** - 基礎から実践まで
 4. **メンターとの面談予約** - キャリア相談・学習計画策定
