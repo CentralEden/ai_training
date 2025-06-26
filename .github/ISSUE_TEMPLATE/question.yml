@@ -1,0 +1,105 @@
+name: 🙋‍♂️ 質問・相談
+description: 研修内容について質問や相談がある場合に使用してください
+title: "[質問] "
+labels: ["question", "help wanted"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        研修内容について分からないことがあれば、お気軽に質問してください！
+        できるだけ詳しく状況を教えていただけると、より良いサポートができます。
+
+  - type: dropdown
+    id: phase
+    attributes:
+      label: 研修フェーズ
+      description: どの研修フェーズでの質問ですか？
+      options:
+        - "Phase 1: 基礎編"
+        - "Phase 2: 機械学習編"
+        - "Phase 3: 深層学習編"
+        - "Phase 4: 実践編"
+        - "その他・全般"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: content-type
+    attributes:
+      label: コンテンツ種別
+      description: どの種類のコンテンツでの質問ですか？
+      options:
+        - "理論・概念"
+        - "実習・ノートブック"
+        - "演習問題"
+        - "プロジェクト"
+        - "環境構築・ツール"
+        - "その他"
+    validations:
+      required: true
+
+  - type: input
+    id: lesson
+    attributes:
+      label: 具体的なレッスン名
+      description: "例: 01_python_basics, 05_supervised_learning など"
+      placeholder: "レッスン名を入力してください"
+
+  - type: textarea
+    id: question
+    attributes:
+      label: 質問内容
+      description: できるだけ具体的に質問内容を記載してください
+      placeholder: |
+        何について分からないのか、どこで詰まっているのかを詳しく教えてください。
+        
+        例:
+        - コードが動かない
+        - 概念が理解できない
+        - 演習問題の解き方が分からない
+        - エラーが発生している
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 環境情報（該当する場合）
+      description: 技術的な問題の場合、環境情報を教えてください
+      placeholder: |
+        - OS: (Windows/Mac/Linux)
+        - Python バージョン:
+        - 使用しているエディタ/IDE:
+        - エラーメッセージ（あれば）:
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: 試したこと
+      description: 問題解決のために既に試したことがあれば教えてください
+      placeholder: |
+        例:
+        - 公式ドキュメントを確認した
+        - Google検索で調べた
+        - コードを修正してみた
+        - など
+
+  - type: checkboxes
+    id: urgency
+    attributes:
+      label: 緊急度
+      options:
+        - label: 至急回答が必要（研修進行に支障）
+        - label: できるだけ早めに回答希望
+        - label: 時間に余裕があるので、いつでもOK
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        📝 **回答について**
+        - 通常1-2営業日以内に回答いたします
+        - 緊急の場合は training@company.com にもメールしてください
+        - 他の受講者にも参考になる質問は、FAQに追加する場合があります 

@@ -1,0 +1,123 @@
+[tool.poetry]
+name = "ai-ds-training-program"
+version = "1.0.0"
+description = "社内AI/データサイエンス研修プログラム"
+authors = ["AI Training Team <training@company.com>"]
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = "^3.13"
+# データ処理・分析
+numpy = "^1.24.3"
+pandas = "^2.0.3"
+scipy = "^1.11.1"
+scikit-learn = "^1.3.0"
+
+# 深層学習フレームワーク
+torch = "^2.0.1"
+torchvision = "^0.15.2"
+tensorflow = "^2.13.0"
+transformers = "^4.30.2"
+
+# 可視化
+matplotlib = "^3.7.1"
+seaborn = "^0.12.2"
+plotly = "^5.15.0"
+
+# Jupyter環境
+jupyter = "^1.0.0"
+jupyterlab = "^4.0.2"
+ipywidgets = "^8.0.6"
+
+# MLOps・実験管理
+mlflow = "^2.4.1"
+wandb = "^0.15.4"
+tensorboard = "^2.13.0"
+
+# データベース・API
+requests = "^2.31.0"
+sqlalchemy = "^2.0.17"
+pymongo = "^4.4.1"
+
+# 時系列解析
+statsmodels = "^0.14.0"
+prophet = "^1.1.4"
+
+# 異常検知
+pyod = "^1.1.0"
+
+# その他ユーティリティ
+tqdm = "^4.65.0"
+pyyaml = "^6.0"
+python-dotenv = "^1.0.0"
+pillow = "^10.0.0"
+
+[tool.poetry.group.dev.dependencies]
+# 開発・テスト用
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+black = "^23.7.0"
+isort = "^5.12.0"
+flake8 = "^6.0.0"
+mypy = "^1.5.0"
+
+# Jupyter用
+nbqa = "^1.7.0"
+nbval = "^0.10.0"
+
+# ドキュメント生成
+mkdocs = "^1.5.0"
+mkdocs-material = "^9.1.0"
+
+[tool.poetry.group.gpu]
+optional = true
+
+[tool.poetry.group.gpu.dependencies]
+# GPU環境用（オプション）
+torch = {version = "^2.0.1", source = "pytorch"}
+torchvision = {version = "^0.15.2", source = "pytorch"}
+torchaudio = {version = "^2.0.1", source = "pytorch"}
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--cov=src",
+    "--cov-report=html",
+    "--cov-report=term-missing",
+    "--strict-markers"
+]
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "*/tests/*",
+    "*/venv/*",
+    "*/__pycache__/*"
+] 

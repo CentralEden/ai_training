@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIエンジニア キャリアパス自動診断ツール</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        h2 {
+            color: #34495e;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+        
+        .checkbox-item:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        
+        .checkbox-item label {
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .result-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            display: none;
+        }
+        
+        .result-section.show {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .career-recommendation {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .career-match-score {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        
+        .learning-path {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        
+        .reset-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+        
+        .reset-btn:hover {
+            background: #c0392b;
+        }
+        
+        .info-icon {
+            color: #3498db;
+            margin-left: 5px;
+            cursor: help;
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.8em;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 AIエンジニア キャリアパス自動診断ツール</h1>
+        
+        <p style="text-align: center; font-size: 1.1em; color: #666;">
+            興味・スキル・志向性を選択すると、あなたに最適なキャリアパスを自動で提案します！
+        </p>
+        
+        <div class="section">
+            <h2>📋 Step 1: 基本情報</h2>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="number" id="experience" min="0" max="20" placeholder="経験年数">
+                    <label for="experience">プログラミング経験年数</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="math-bg" data-category="background">
+                    <label for="math-bg">統計・数学の学習経験あり</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Step 2: 興味・関心分野</h2>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="data-analysis" data-category="interest" data-weight="data-science,consultant">
+                    <label for="data-analysis">データ分析 - 数字から洞察を得ることが好き</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="system-dev" data-category="interest" data-weight="ml-engineer,data-engineer">
+                    <label for="system-dev">システム開発 - 実際に動くシステムを作りたい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="research" data-category="interest" data-weight="research,specialist">
+                    <label for="research">研究・開発 - 最新技術を追求したい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="business" data-category="interest" data-weight="consultant,product-manager,business-dev">
+                    <label for="business">ビジネス - 技術をビジネス価値に変換したい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="consulting" data-category="interest" data-weight="consultant">
+                    <label for="consulting">コンサルティング - 課題解決・提案が得意</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="management" data-category="interest" data-weight="product-manager,business-dev">
+                    <label for="management">マネジメント - チームを率いて成果を出したい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="vision" data-category="interest" data-weight="cv-engineer">
+                    <label for="vision">画像・映像 - 視覚的なデータに興味がある</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="nlp" data-category="interest" data-weight="nlp-engineer">
+                    <label for="nlp">言語・文章 - テキストデータの処理に興味がある</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="audio" data-category="interest" data-weight="audio-engineer">
+                    <label for="audio">音声・音響 - 音に関する技術に興味がある</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="robotics" data-category="interest" data-weight="robotics-engineer">
+                    <label for="robotics">ロボット・制御 - 物理的なシステムに興味がある</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>💼 Step 3: 働き方の志向性</h2>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="tech-deep" data-category="workstyle" data-weight="research,specialist,ml-engineer">
+                    <label for="tech-deep">技術深化 - 特定技術の専門家になりたい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="tech-broad" data-category="workstyle" data-weight="data-science,consultant">
+                    <label for="tech-broad">技術幅広 - 複数技術を横断的に活用したい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="individual" data-category="workstyle" data-weight="research,ml-engineer,data-engineer">
+                    <label for="individual">個人作業 - 集中して技術に取り組みたい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="team" data-category="workstyle" data-weight="data-science,consultant,product-manager">
+                    <label for="team">チーム作業 - 他者と協力して成果を出したい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="internal" data-category="workstyle" data-weight="ml-engineer,data-engineer,product-manager">
+                    <label for="internal">社内勤務 - 自社プロダクト開発に集中したい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="customer" data-category="workstyle" data-weight="consultant,business-dev">
+                    <label for="customer">顧客対応 - 様々な業界・企業と関わりたい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="stable" data-category="workstyle" data-weight="data-science,data-engineer">
+                    <label for="stable">安定志向 - 着実にスキルアップしたい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="challenge" data-category="workstyle" data-weight="research,business-dev,specialist">
+                    <label for="challenge">挑戦志向 - 新しいことに積極的に取り組みたい</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🚀 Step 4: 将来の目標</h2>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="specialist-goal" data-category="goal" data-weight="research,specialist">
+                    <label for="specialist-goal">技術のスペシャリスト - 特定分野の第一人者</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="leader-goal" data-category="goal" data-weight="ml-engineer,data-science">
+                    <label for="leader-goal">プロジェクトリーダー - 技術プロジェクトの責任者</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="manager-goal" data-category="goal" data-weight="product-manager">
+                    <label for="manager-goal">マネージャー - チーム・組織の管理者</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="consultant-goal" data-category="goal" data-weight="consultant">
+                    <label for="consultant-goal">コンサルタント - 専門知識を活かした提案・支援</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="entrepreneur-goal" data-category="goal" data-weight="business-dev">
+                    <label for="entrepreneur-goal">起業・独立 - 自分の事業を立ち上げたい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="researcher-goal" data-category="goal" data-weight="research">
+                    <label for="researcher-goal">研究者・教育者 - 学術・教育分野で活躍したい</label>
+                </div>
+            </div>
+        </div>
+        
+        <button class="reset-btn" onclick="resetForm()">🔄 リセット</button>
+    </div>
+    
+    <div class="result-section" id="results">
+        <h2>🎯 あなたの診断結果</h2>
+        <div id="career-recommendations"></div>
+        <div id="learning-path-recommendation"></div>
+    </div>
+
+    <script>
+        // キャリアパス定義
+        const careerPaths = {
+            'data-science': {
+                name: 'データサイエンティスト',
+                description: 'データ分析とビジネス価値創出のスペシャリスト',
+                techDepth: 3,
+                businessInvolvement: 4,
+                learningPath: '共通基礎コース → 時系列解析 → データエンジニアリング',
+                nextSteps: ['AIコンサルタント', 'AIプロダクトマネージャー']
+            },
+            'ml-engineer': {
+                name: '機械学習エンジニア',
+                description: 'MLシステムの設計・実装・運用のエキスパート',
+                techDepth: 5,
+                businessInvolvement: 2,
+                learningPath: '共通基礎コース → 画像認識 or NLP → データエンジニアリング',
+                nextSteps: ['MLテックリード', 'MLアーキテクト']
+            },
+            'data-engineer': {
+                name: 'データエンジニア',
+                description: 'データ基盤の構築・運用のスペシャリスト',
+                techDepth: 4,
+                businessInvolvement: 2,
+                learningPath: '共通基礎コース → データエンジニアリング → 異常検知',
+                nextSteps: ['データアーキテクト', 'プラットフォームエンジニア']
+            },
+            'research': {
+                name: 'リサーチサイエンティスト',
+                description: '最先端AI技術の研究開発者',
+                techDepth: 5,
+                businessInvolvement: 1,
+                learningPath: '共通基礎コース → 複数専門分野 → 研究プロジェクト',
+                nextSteps: ['研究ディレクター', 'CTO']
+            },
+            'consultant': {
+                name: 'AIコンサルタント',
+                description: 'AI技術を活用したビジネス課題解決の専門家',
+                techDepth: 2,
+                businessInvolvement: 5,
+                learningPath: '共通基礎コース → 時系列解析 → コンサルタント向けコース',
+                nextSteps: ['パートナー', '独立コンサルタント']
+            },
+            'product-manager': {
+                name: 'AIプロダクトマネージャー',
+                description: 'AIプロダクトの企画・開発・運用責任者',
+                techDepth: 2,
+                businessInvolvement: 5,
+                learningPath: '共通基礎コース → 推薦システム → PM向けコース',
+                nextSteps: ['CPO', 'VP of Product']
+            },
+            'business-dev': {
+                name: 'AI事業開発',
+                description: 'AI技術を活用した新規事業創出の専門家',
+                techDepth: 2,
+                businessInvolvement: 5,
+                learningPath: '共通基礎コース → 時系列解析 → 事業開発コース',
+                nextSteps: ['新規事業部門長', '起業']
+            },
+            'cv-engineer': {
+                name: 'コンピュータビジョンエンジニア',
+                description: '画像・映像解析技術の専門家',
+                techDepth: 5,
+                businessInvolvement: 2,
+                learningPath: '共通基礎コース → 画像認識 → 異常検知',
+                nextSteps: ['CVテックリード', '自動運転エンジニア']
+            },
+            'nlp-engineer': {
+                name: '自然言語処理エンジニア',
+                description: 'テキスト・言語処理技術の専門家',
+                techDepth: 5,
+                businessInvolvement: 2,
+                learningPath: '共通基礎コース → 自然言語処理 → 推薦システム',
+                nextSteps: ['NLPテックリード', '対話AI責任者']
+            },
+            'audio-engineer': {
+                name: '音声・音響エンジニア',
+                description: '音声認識・音響処理技術の専門家',
+                techDepth: 5,
+                businessInvolvement: 2,
+                learningPath: '共通基礎コース → 音声処理 → 異常検知',
+                nextSteps: ['音声技術リード', 'AI音響エンジニア']
+            },
+            'robotics-engineer': {
+                name: 'ロボティクスエンジニア',
+                description: 'ロボット制御・AI統合システムの専門家',
+                techDepth: 5,
+                businessInvolvement: 2,
+                learningPath: '共通基礎コース → 画像認識 → 制御システム',
+                nextSteps: ['ロボティクスリード', '自律システム設計者']
+            }
+        };
+
+        // スコア計算とリアルタイム更新
+        function calculateScores() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            const scores = {};
+            
+            // 全キャリアパスのスコアを初期化
+            Object.keys(careerPaths).forEach(key => {
+                scores[key] = 0;
+            });
+            
+            // チェックされた項目に基づいてスコアを計算
+            checkboxes.forEach(checkbox => {
+                const weights = checkbox.dataset.weight;
+                if (weights) {
+                    weights.split(',').forEach(career => {
+                        if (scores[career] !== undefined) {
+                            scores[career] += 1;
+                        }
+                    });
+                }
+            });
+            
+            // 経験年数による重み付け
+            const experience = parseInt(document.getElementById('experience').value) || 0;
+            if (experience >= 5) {
+                scores['consultant'] += 1;
+                scores['product-manager'] += 1;
+                scores['research'] += 1;
+            }
+            if (experience >= 3) {
+                scores['ml-engineer'] += 1;
+                scores['data-engineer'] += 1;
+            }
+            
+            return scores;
+        }
+
+        function updateResults() {
+            const scores = calculateScores();
+            const sortedCareers = Object.entries(scores)
+                .sort(([,a], [,b]) => b - a)
+                .filter(([,score]) => score > 0);
+            
+            const resultsDiv = document.getElementById('results');
+            const recommendationsDiv = document.getElementById('career-recommendations');
+            const learningPathDiv = document.getElementById('learning-path-recommendation');
+            
+            if (sortedCareers.length === 0) {
+                resultsDiv.classList.remove('show');
+                return;
+            }
+            
+            resultsDiv.classList.add('show');
+            
+            // トップ3の推奨キャリアパスを表示
+            const topCareers = sortedCareers.slice(0, 3);
+            const maxScore = topCareers[0][1];
+            
+            recommendationsDiv.innerHTML = `
+                <h3>🏆 あなたにおすすめのキャリアパス（上位3位）</h3>
+                ${topCareers.map(([careerKey, score], index) => {
+                    const career = careerPaths[careerKey];
+                    const matchPercentage = Math.round((score / maxScore) * 100);
+                    const medal = ['🥇', '🥈', '🥉'][index];
+                    
+                    return `
+                        <div class="career-recommendation">
+                            <div class="career-match-score">${medal} ${career.name} (適合度: ${matchPercentage}%)</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${matchPercentage}%"></div>
+                            </div>
+                            <p><strong>概要:</strong> ${career.description}</p>
+                            <p><strong>技術深度:</strong> ${'⭐'.repeat(career.techDepth)} | <strong>ビジネス関与:</strong> ${'⭐'.repeat(career.businessInvolvement)}</p>
+                            <p><strong>将来のキャリア展開:</strong> ${career.nextSteps.join(' / ')}</p>
+                            <div class="learning-path">
+                                <strong>推奨学習パス:</strong><br>
+                                ${career.learningPath}
+                            </div>
+                        </div>
+                    `;
+                }).join('')}
+            `;
+            
+            // 学習開始のアクション
+            learningPathDiv.innerHTML = `
+                <h3>🚀 次のアクション</h3>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;">
+                    <p><strong>1. 学習開始:</strong> <a href="../foundations/00_development_setup/" style="color: #ffd700;">Week 0: 開発環境セットアップ</a>から始めましょう</p>
+                    <p><strong>2. 詳細情報:</strong> <a href="ai_career_paths_guide.md" style="color: #ffd700;">キャリアパス詳細ガイド</a>で各職種の詳細を確認</p>
+                    <p><strong>3. メンター相談:</strong> 技術系キャリア（senior-engineers@company.com）またはビジネス系キャリア（business-mentors@company.com）</p>
+                    <p><strong>4. 学習計画:</strong> 推奨学習パスに基づいて具体的なスケジュールを立てましょう</p>
+                </div>
+            `;
+        }
+
+        function resetForm() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            document.getElementById('experience').value = '';
+            document.getElementById('results').classList.remove('show');
+        }
+
+        // イベントリスナーの設定
+        document.addEventListener('DOMContentLoaded', function() {
+            // すべてのチェックボックスと入力フィールドにイベントリスナーを追加
+            document.querySelectorAll('input[type="checkbox"], input[type="number"]').forEach(input => {
+                input.addEventListener('change', updateResults);
+                input.addEventListener('input', updateResults);
+            });
+        });
+    </script>
+</body>
+</html>
