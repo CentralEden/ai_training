@@ -399,8 +399,14 @@
                 </div>
                 <div class="checkbox-item">
                     <input type="checkbox" id="robotics" data-category="interest" data-weight="robotics-engineer">
-                    <label for="robotics">ロボット・制御 - 物理的なシステムに興味がある</label>
+                    <label for="robotics">ロボティクス - 自律システム・制御技術に興味がある</label>
                 </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="infrastructure" data-category="interest" data-weight="data-engineer,mlops-engineer">
+                    <label for="infrastructure">インフラ・基盤 - 大規模システムの構築・運用が好き</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="security" data-category="interest" data-weight="ai-security-engineer">
             </div>
         </div>
         
@@ -495,572 +501,360 @@
     </div>
 
     <script>
-        // キャリア詳細データ
+        // キャリア詳細データ（モーダル表示用）
         const careerDetails = {
             'data-science': {
                 title: 'データサイエンティスト',
                 content: `
-                    <h2>🎯 職種概要</h2>
-                    <p>データサイエンティストは、データ分析とビジネス価値創出のスペシャリストです。統計学、機械学習、ビジネス知識を組み合わせて、データから洞察を抽出し、意思決定を支援します。</p>
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>データサイエンティストは、<strong>データを使ってビジネスの課題を解決する"データの探偵"</strong>です。売上データ、顧客データ、ウェブサイトのアクセスデータなど、様々なデータから隠れているパターンや傾向を見つけ出し、会社の意思決定をサポートします。</p>
                     
-                    <h2>📋 主な業務内容</h2>
-                    <h3>データ分析・モデリング</h3>
+                    <h2>✨ やりがい・魅力</h2>
                     <ul>
-                        <li><strong>探索的データ分析（EDA）</strong>: データの特徴や傾向を把握</li>
-                        <li><strong>統計的分析</strong>: 仮説検定、回帰分析、分散分析など</li>
-                        <li><strong>機械学習モデリング</strong>: 予測モデル、分類モデルの構築</li>
-                        <li><strong>A/Bテスト設計・分析</strong>: 施策効果の定量的評価</li>
+                        <li><strong>データから新しい発見をする喜び</strong> - 「なぜ売上が伸びたのか？」「どの商品が人気なのか？」をデータで解明</li>
+                        <li><strong>ビジネスに直接貢献</strong> - 分析結果が会社の戦略や売上向上に直結</li>
+                        <li><strong>幅広い業界で活躍</strong> - EC、金融、医療、製造業など、どの業界でも必要とされる</li>
+                        <li><strong>論理的思考力が身につく</strong> - データに基づいた客観的な判断ができるように</li>
                     </ul>
                     
-                    <h3>ビジネス価値創出</h3>
+                    <h2>📊 具体的な案件例</h2>
                     <ul>
-                        <li><strong>KPI設計・改善提案</strong>: ビジネス指標の定義と改善案提示</li>
-                        <li><strong>意思決定支援</strong>: データに基づく戦略的提言</li>
-                        <li><strong>レポート作成</strong>: 経営層向け分析結果の可視化・報告</li>
-                        <li><strong>ROI分析</strong>: 施策の費用対効果測定</li>
+                        <li><strong>ECサイト</strong>: 「どの商品を一緒に買う人が多いか？」を分析してレコメンド機能を改善</li>
+                        <li><strong>小売業</strong>: 「来月の売上はどのくらいになるか？」を予測して仕入れ計画を最適化</li>
+                        <li><strong>金融</strong>: 「どの顧客がローンを返済できなくなるリスクが高いか？」を予測</li>
+                        <li><strong>マーケティング</strong>: 「どの広告が効果的か？」をA/Bテストで検証</li>
+                        <li><strong>人事</strong>: 「どの社員が転職しそうか？」を分析して離職防止策を提案</li>
                     </ul>
                     
-                    <h2>🛠️ 必要なスキル</h2>
-                    <h3>技術スキル</h3>
+                    <h2>👥 こんな人に向いています</h2>
                     <ul>
-                        <li><strong>プログラミング</strong>: Python、R、SQL</li>
-                        <li><strong>統計・数学</strong>: 統計学、線形代数、確率論</li>
-                        <li><strong>機械学習</strong>: scikit-learn、pandas、NumPy</li>
-                        <li><strong>可視化</strong>: Matplotlib、Seaborn、Plotly、Tableau</li>
+                        <li><strong>数字やデータを見るのが好き</strong> - グラフや表から傾向を読み取るのが楽しい</li>
+                        <li><strong>「なぜ？」を追求したい</strong> - 現象の裏にある理由を知りたがる</li>
+                        <li><strong>論理的に考えるのが得意</strong> - 仮説を立てて検証するプロセスが好き</li>
+                        <li><strong>ビジネスに興味がある</strong> - 会社の売上や戦略に関心がある</li>
+                        <li><strong>コミュニケーションが好き</strong> - 分析結果を分かりやすく説明するのが得意</li>
                     </ul>
                     
-                    <h3>ビジネススキル</h3>
-                    <ul>
-                        <li><strong>ドメイン知識</strong>: 担当業界・事業の深い理解</li>
-                        <li><strong>問題設定</strong>: ビジネス課題をデータ分析問題に翻訳</li>
-                        <li><strong>コミュニケーション</strong>: 非技術者への分析結果説明</li>
-                        <li><strong>プロジェクト管理</strong>: 分析プロジェクトの進行管理</li>
-                    </ul>
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>需要が高く、どの業界でも活躍できる</strong>職種です。データ分析スキルは汎用性が高く、将来的にはAIコンサルタントやプロダクトマネージャーなど、より戦略的な役割にステップアップすることも可能です。</p>
                     
-                    <h3>その他の技術スキル</h3>
-                    <ul>
-                        <li><strong>データベース</strong>: PostgreSQL、MySQL、BigQuery</li>
-                        <li><strong>データ前処理</strong>: データクリーニング、前処理自動化</li>
-                        <li><strong>自動化</strong>: 定期レポート作成の自動化</li>
-                    </ul>
-                    
-                    <h2>📈 キャリアパス</h2>
-                    <p><strong>初級（0-2年）</strong>: ジュニアデータサイエンティスト<br>
-                    <strong>中級（3-5年）</strong>: シニアデータサイエンティスト<br>
-                    <strong>上級（5年以上）</strong>: リードデータサイエンティスト、データサイエンスマネージャー、AIコンサルタント、AIプロダクトマネージャー</p>
-                    
-                    <h2>🎓 推奨学習パス</h2>
-                    <p><strong>Phase 1</strong>: 統計学基礎、Python基礎、SQL基礎<br>
-                    <strong>Phase 2</strong>: 機械学習（教師あり・なし学習）<br>
-                    <strong>Phase 3</strong>: 時系列解析、A/Bテスト、ビジネス分析<br>
-                    <strong>Phase 4</strong>: 深層学習、因果推論、MLOps</p>
+                    <h2>💡 まずは何から？</h2>
+                    <p>数学が苦手でも大丈夫！まずは<strong>Excel</strong>や<strong>Google スプレッドシート</strong>でデータ分析を体験してみましょう。慣れてきたら<strong>Python</strong>というプログラミング言語を学ぶと、より高度な分析ができるようになります。</p>
                 `
             },
             'ml-engineer': {
                 title: '機械学習エンジニア',
                 content: `
-                    <h2>🎯 職種概要</h2>
-                    <p>機械学習エンジニアは、MLシステムの設計・実装・運用のエキスパートです。研究段階のモデルを本番環境で動作する実用的なシステムに変換し、継続的な改善とスケーラブルな運用を実現します。</p>
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>機械学習エンジニアは、<strong>AIを実際のサービスで使えるようにする"AIの実装者"</strong>です。データサイエンティストが作った予測モデルを、実際のアプリやウェブサイトで動くように組み込み、多くの人が使えるサービスにします。</p>
                     
-                    <h2>📋 主な業務内容</h2>
-                    <h3>モデル開発・実装</h3>
+                    <h2>✨ やりがい・魅力</h2>
                     <ul>
-                        <li><strong>アルゴリズム実装</strong>: 最新の機械学習手法のコード化</li>
-                        <li><strong>モデル最適化</strong>: パフォーマンス向上、メモリ効率化</li>
-                        <li><strong>特徴量エンジニアリング</strong>: 効果的な特徴量の設計・実装</li>
-                        <li><strong>ハイパーパラメータ調整</strong>: 自動調整システムの構築</li>
+                        <li><strong>最新のAI技術を実装できる</strong> - ChatGPTのような話題の技術を実際に作る側になれる</li>
+                        <li><strong>自分が作ったAIが多くの人に使われる</strong> - 数万人、数百万人のユーザーに価値を提供</li>
+                        <li><strong>技術力が高く評価される</strong> - 高度な技術スキルを持つエンジニアとして認められる</li>
+                        <li><strong>常に新しい技術を学べる</strong> - AI分野は進歩が速く、毎日新しい発見がある</li>
                     </ul>
                     
-                    <h3>システム設計・構築</h3>
+                    <h2>🤖 具体的な案件例</h2>
                     <ul>
-                        <li><strong>MLパイプライン構築</strong>: 学習から推論までの自動化</li>
-                        <li><strong>モデルサービング</strong>: API化、リアルタイム推論システム</li>
-                        <li><strong>スケーラブル設計</strong>: 大規模データ・高負荷対応</li>
-                        <li><strong>マイクロサービス化</strong>: モデルの独立デプロイ・管理</li>
+                        <li><strong>画像認識アプリ</strong>: スマホで写真を撮ると商品名や価格が分かるアプリを開発</li>
+                        <li><strong>チャットボット</strong>: 顧客からの質問に自動で答えるAIシステムを構築</li>
+                        <li><strong>レコメンドシステム</strong>: Netflixのような「あなたにおすすめ」機能を実装</li>
+                        <li><strong>音声認識</strong>: 「OK Google」のような音声コマンドシステムを開発</li>
+                        <li><strong>自動運転</strong>: 車が自動で運転できるAIシステムの一部を担当</li>
                     </ul>
                     
-                    <h3>運用・監視</h3>
+                    <h2>👥 こんな人に向いています</h2>
                     <ul>
-                        <li><strong>モデル監視</strong>: 性能劣化の検知・アラート</li>
-                        <li><strong>A/Bテスト基盤</strong>: モデル比較・評価システム</li>
-                        <li><strong>再学習自動化</strong>: データ更新に応じた自動再学習</li>
-                        <li><strong>ログ・メトリクス</strong>: 詳細な運用データ収集・分析</li>
+                        <li><strong>プログラミングが好き</strong> - コードを書いて何かを作るのが楽しい</li>
+                        <li><strong>新しい技術に興味がある</strong> - 最新のAI技術を試してみたい</li>
+                        <li><strong>論理的思考が得意</strong> - 複雑な問題を段階的に解決できる</li>
+                        <li><strong>集中力がある</strong> - 長時間コードと向き合うことができる</li>
+                        <li><strong>完璧主義的な面がある</strong> - システムが正確に動作することにこだわりがある</li>
                     </ul>
                     
-                    <h2>🛠️ 必要なスキル</h2>
-                    <h3>技術スキル（機械学習）</h3>
-                    <ul>
-                        <li><strong>深層学習</strong>: TensorFlow、PyTorch、Keras</li>
-                        <li><strong>機械学習ライブラリ</strong>: scikit-learn、XGBoost、LightGBM</li>
-                        <li><strong>数学・統計</strong>: 線形代数、確率・統計、最適化理論</li>
-                        <li><strong>プログラミング</strong>: Python、C++、Java、Go</li>
-                    </ul>
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>AI分野で最も需要が高い</strong>職種の一つです。技術力を身につければ、GAFA等の大手テック企業や、AIスタートアップ、自動車会社など、様々な業界で活躍できます。将来的にはAIアーキテクトやCTOなど、技術責任者への道も開けます。</p>
                     
-                    <h3>技術スキル（エンジニアリング）</h3>
-                    <ul>
-                        <li><strong>クラウド</strong>: AWS、GCP、Azure（ML専用サービス）</li>
-                        <li><strong>コンテナ</strong>: Docker、Kubernetes</li>
-                        <li><strong>データベース</strong>: PostgreSQL、MongoDB、Redis</li>
-                        <li><strong>ストリーミング</strong>: Apache Kafka、Apache Spark</li>
-                        <li><strong>CI/CD</strong>: Jenkins、GitLab CI、GitHub Actions</li>
-                    </ul>
-                    
-                    <h3>システム設計スキル</h3>
-                    <ul>
-                        <li><strong>分散システム</strong>: マイクロサービス、負荷分散</li>
-                        <li><strong>API設計</strong>: RESTful API、GraphQL</li>
-                        <li><strong>セキュリティ</strong>: 認証・認可、データ暗号化</li>
-                        <li><strong>パフォーマンス</strong>: 低レイテンシ、高スループット設計</li>
-                    </ul>
-                    
-                    <h2>📈 キャリアパス</h2>
-                    <p><strong>初級（0-2年）</strong>: ジュニア機械学習エンジニア<br>
-                    <strong>中級（3-5年）</strong>: 機械学習エンジニア<br>
-                    <strong>上級（5年以上）</strong>: シニア機械学習エンジニア、MLテックリード、MLプラットフォームエンジニア、AI研究エンジニア</p>
-                    
-                    <h2>🎓 推奨学習パス</h2>
-                    <p><strong>Phase 1</strong>: Python基礎、機械学習理論、深層学習入門<br>
-                    <strong>Phase 2</strong>: ソフトウェア開発、クラウド基礎、データベース<br>
-                    <strong>Phase 3</strong>: MLパイプライン、コンテナ技術、API開発<br>
-                    <strong>Phase 4</strong>: 分散処理、リアルタイム処理、最適化</p>
+                    <h2>💡 まずは何から？</h2>
+                    <p><strong>Python</strong>というプログラミング言語から始めましょう。YouTubeやNetflixの推薦機能を真似して作ってみるなど、身近なサービスを参考にしながら学ぶと楽しく続けられます。数学は後からでも大丈夫です！</p>
                 `
             },
             'consultant': {
                 title: 'AIコンサルタント',
                 content: `
-                    <h2>🎯 職種概要</h2>
-                    <p>AIコンサルタントは、AI技術を活用したビジネス課題解決の専門家です。クライアントの業務課題を理解し、AI技術の可能性と制約を踏まえて最適なソリューションを提案・実装支援します。</p>
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>AIコンサルタントは、<strong>AI技術を使って企業の課題を解決する"AIの相談役"</strong>です。様々な業界の企業を訪問し、「AIで何ができるか？」「どうすれば効率化できるか？」を提案し、実現までサポートします。</p>
                     
-                    <h2>📋 主な業務内容</h2>
-                    <h3>課題発見・要件定義</h3>
+                    <h2>✨ やりがい・魅力</h2>
                     <ul>
-                        <li><strong>ビジネス課題ヒアリング</strong>: クライアントの現状分析・課題整理</li>
-                        <li><strong>AI適用可能性評価</strong>: 技術的実現可能性とROIの評価</li>
-                        <li><strong>要件定義</strong>: 機能要件・非機能要件の詳細化</li>
-                        <li><strong>プロジェクト計画</strong>: スコープ、スケジュール、予算の策定</li>
+                        <li><strong>多様な業界と関われる</strong> - 製造業、小売業、医療、金融など、毎回違う業界の課題に挑戦</li>
+                        <li><strong>ビジネスに直接インパクト</strong> - 提案したAI施策で企業の売上や効率が大幅に改善</li>
+                        <li><strong>経営層と議論できる</strong> - 社長や役員レベルと戦略を議論する機会が多い</li>
+                        <li><strong>幅広いスキルが身につく</strong> - 技術・ビジネス・プレゼンテーション能力が総合的に向上</li>
                     </ul>
                     
-                    <h3>ソリューション設計</h3>
+                    <h2>💼 具体的な案件例</h2>
                     <ul>
-                        <li><strong>AI戦略策定</strong>: 中長期的なAI活用ロードマップ</li>
-                        <li><strong>アーキテクチャ設計</strong>: システム全体の技術的設計</li>
-                        <li><strong>データ戦略</strong>: データ収集・整備・活用戦略</li>
-                        <li><strong>リスク分析</strong>: 技術的・ビジネス的リスクの特定と対策</li>
+                        <li><strong>製造業</strong>: 「工場の不良品を画像認識で自動検出し、検査時間を90%短縮」を提案・実現</li>
+                        <li><strong>小売業</strong>: 「来店客の行動分析で売場レイアウトを最適化し、売上20%向上」を支援</li>
+                        <li><strong>物流業</strong>: 「配送ルート最適化AIで燃料費を30%削減」するシステムを導入</li>
+                        <li><strong>金融業</strong>: 「不正取引検知AIで被害額を50%削減」するシステムを構築</li>
+                        <li><strong>医療業</strong>: 「診断支援AIで医師の診断精度向上」プロジェクトを推進</li>
                     </ul>
                     
-                    <h3>プロジェクト推進</h3>
+                    <h2>👥 こんな人に向いています</h2>
                     <ul>
-                        <li><strong>提案書作成</strong>: 技術的根拠に基づく説得力のある提案</li>
-                        <li><strong>ステークホルダー調整</strong>: 経営層・現場・技術チームの橋渡し</li>
-                        <li><strong>プロジェクト管理</strong>: 進捗管理、品質管理、リスク管理</li>
-                        <li><strong>変更管理</strong>: 組織変革の支援・推進</li>
+                        <li><strong>人と話すのが好き</strong> - 様々な業界の人とコミュニケーションを取るのが楽しい</li>
+                        <li><strong>課題解決が得意</strong> - 「どうすれば良くなるか？」を考えるのが好き</li>
+                        <li><strong>プレゼンテーションが得意</strong> - 複雑な技術を分かりやすく説明できる</li>
+                        <li><strong>好奇心旺盛</strong> - 新しい業界や技術に興味を持って学べる</li>
+                        <li><strong>ビジネスに興味がある</strong> - 企業の経営や戦略に関心がある</li>
                     </ul>
                     
-                    <h3>価値実現支援</h3>
-                    <ul>
-                        <li><strong>効果測定</strong>: KPI設計・モニタリング・改善提案</li>
-                        <li><strong>組織能力向上</strong>: チーム育成・知識移転</li>
-                        <li><strong>継続改善</strong>: 運用後の最適化・拡張提案</li>
-                        <li><strong>事業拡張</strong>: 成功事例の他部門・他社への展開</li>
-                    </ul>
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>AI導入が加速する今、最も需要が高い</strong>職種です。企業のDX推進を技術面・戦略面の両方で支援できるため、高い価値を提供できます。将来的には独立してコンサルティング会社を立ち上げることも可能です。</p>
                     
-                    <h2>🛠️ 必要なスキル</h2>
-                    <h3>ビジネススキル</h3>
-                    <ul>
-                        <li><strong>戦略思考</strong>: 事業戦略とAI技術の連携設計</li>
-                        <li><strong>問題解決</strong>: 複雑な課題の構造化・解決策立案</li>
-                        <li><strong>プレゼンテーション</strong>: 経営層への説得力のある提案</li>
-                        <li><strong>プロジェクト管理</strong>: 複数プロジェクトの並行推進</li>
-                    </ul>
-                    
-                    <h3>技術スキル</h3>
-                    <ul>
-                        <li><strong>AI技術理解</strong>: 機械学習・深層学習の原理と適用範囲</li>
-                        <li><strong>データ分析</strong>: 統計学、データ可視化、仮説検証</li>
-                        <li><strong>システム設計</strong>: アーキテクチャ、インフラ、セキュリティ</li>
-                        <li><strong>プログラミング</strong>: Python、SQL（基本レベル）</li>
-                    </ul>
-                    
-                    <h3>業界知識</h3>
-                    <ul>
-                        <li><strong>ドメイン専門性</strong>: 特定業界の深い理解</li>
-                        <li><strong>規制・コンプライアンス</strong>: 業界固有の法的制約</li>
-                        <li><strong>競合分析</strong>: 市場動向・競合他社の戦略</li>
-                        <li><strong>技術トレンド</strong>: 最新AI技術の動向と実用性</li>
-                    </ul>
-                    
-                    <h2>📈 キャリアパス</h2>
-                    <p><strong>初級（0-3年）</strong>: ジュニアAIコンサルタント<br>
-                    <strong>中級（3-6年）</strong>: AIコンサルタント<br>
-                    <strong>上級（6年以上）</strong>: シニアAIコンサルタント、AIコンサルティングマネージャー、パートナー、独立コンサルタント</p>
-                    
-                    <h2>🎓 推奨学習パス</h2>
-                    <p><strong>Phase 1</strong>: 戦略コンサルティング、プロジェクト管理、プレゼンテーション<br>
-                    <strong>Phase 2</strong>: 機械学習基礎、データ分析、AI事例研究<br>
-                    <strong>Phase 3</strong>: ドメイン知識、規制・コンプライアンス、競合分析<br>
-                    <strong>Phase 4</strong>: 実プロジェクト、ネットワーキング、継続学習</p>
+                    <h2>💡 まずは何から？</h2>
+                    <p>技術の詳細よりも<strong>「AIで何ができるか」の事例</strong>をたくさん知ることから始めましょう。ニュースやケーススタディを読み、<strong>PowerPoint</strong>で提案資料を作る練習をすると良いでしょう。</p>
                 `
             },
-            'nlp-engineer': {
-                title: '自然言語処理エンジニア',
+            'ai-architect': {
+                title: 'AI/MLアーキテクト',
                 content: `
-                    <h2>🎯 職種概要</h2>
-                    <p>自然言語処理エンジニアは、テキスト・言語処理技術の専門家です。人間の言語をコンピュータが理解・生成できるシステムを開発し、チャットボット、翻訳、文書分析などの実用的なアプリケーションを構築します。</p>
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>AI/MLアーキテクトは、<strong>大規模AIシステムの全体設計を担当する"AIの設計図を描く人"</strong>です。複数のAIエンジニアチームを技術面でリードし、企業全体のAI戦略を技術的に実現します。</p>
                     
-                    <h2>📋 主な業務内容</h2>
-                    <h3>テキスト処理・分析</h3>
+                    <h2>✨ やりがい・魅力</h2>
                     <ul>
-                        <li><strong>前処理パイプライン</strong>: トークン化、正規化、ノイズ除去</li>
-                        <li><strong>形態素解析</strong>: 品詞タグ付け、構文解析、依存関係解析</li>
-                        <li><strong>情報抽出</strong>: 固有表現認識、関係抽出、イベント抽出</li>
-                        <li><strong>感情分析</strong>: ポジネガ判定、感情分類、意図理解</li>
+                        <li><strong>技術的リーダーシップを発揮</strong> - 多くのエンジニアから技術的に頼られる存在になれる</li>
+                        <li><strong>企業のAI戦略を左右</strong> - 技術選択が事業の成功を大きく左右する重要な役割</li>
+                        <li><strong>最先端技術を統合</strong> - 様々なAI技術を組み合わせて最適なシステムを設計</li>
+                        <li><strong>高い技術的地位</strong> - CTO候補として将来の技術責任者への道が開ける</li>
                     </ul>
                     
-                    <h3>言語モデル開発</h3>
+                    <h2>🏗️ 具体的な案件例</h2>
                     <ul>
-                        <li><strong>Transformer実装</strong>: BERT、GPT、T5等の最新モデル</li>
-                        <li><strong>ファインチューニング</strong>: タスク特化型モデルの構築</li>
-                        <li><strong>プロンプトエンジニアリング</strong>: 大規模言語モデルの効果的活用</li>
-                        <li><strong>マルチモーダル</strong>: テキスト×画像、音声の統合処理</li>
+                        <li><strong>自動運転システム</strong>: 「画像認識・センサー融合・制御システムを統合した自動運転AI」の全体設計</li>
+                        <li><strong>金融AI基盤</strong>: 「リアルタイム不正検知・与信判定・投資助言を統合したAIプラットフォーム」を設計</li>
+                        <li><strong>医療AIシステム</strong>: 「画像診断・電子カルテ解析・治療支援を統合した病院向けAI」を構築</li>
+                        <li><strong>製造業DX</strong>: 「工場全体の品質管理・予知保全・生産最適化AIシステム」を統括</li>
+                        <li><strong>スマートシティ</strong>: 「交通・エネルギー・防犯を統合した都市AI基盤」の技術戦略を策定</li>
                     </ul>
                     
-                    <h3>アプリケーション構築</h3>
+                    <h2>👥 こんな人に向いています</h2>
                     <ul>
-                        <li><strong>対話システム</strong>: チャットボット、音声アシスタント</li>
-                        <li><strong>機械翻訳</strong>: 多言語翻訳システム、専門分野翻訳</li>
-                        <li><strong>文書処理</strong>: 要約、分類、検索、質問応答</li>
-                        <li><strong>コンテンツ生成</strong>: 自動記事作成、創作支援</li>
+                        <li><strong>技術の全体像を把握するのが得意</strong> - 複雑なシステムを俯瞰して設計できる</li>
+                        <li><strong>リーダーシップがある</strong> - 技術チームを率いてプロジェクトを成功に導ける</li>
+                        <li><strong>新しい技術への学習意欲が高い</strong> - 常に最新のAI技術をキャッチアップできる</li>
+                        <li><strong>ビジネス感覚がある</strong> - 技術とビジネス価値を結びつけて考えられる</li>
+                        <li><strong>長期的視点で考えられる</strong> - 数年先を見据えた技術戦略を立てられる</li>
                     </ul>
                     
-                    <h2>🛠️ 必要なスキル</h2>
-                    <h3>技術スキル（NLP）</h3>
-                    <ul>
-                        <li><strong>深層学習</strong>: Transformer、RNN、CNN</li>
-                        <li><strong>NLPライブラリ</strong>: Hugging Face、spaCy、NLTK</li>
-                        <li><strong>言語学知識</strong>: 統語論、意味論、語用論</li>
-                        <li><strong>評価手法</strong>: BLEU、ROUGE、BERTScore</li>
-                    </ul>
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>AI分野の最高峰キャリア</strong>の一つです。5-7年の実務経験を経て到達できる職種で、将来的にはCTO（最高技術責任者）や技術コンサルタント、スタートアップ創業者など、技術界のトップリーダーとして活躍できます。</p>
                     
-                    <h3>技術スキル（エンジニアリング）</h3>
-                    <ul>
-                        <li><strong>プログラミング</strong>: Python、PyTorch/TensorFlow</li>
-                        <li><strong>データ処理</strong>: pandas、NumPy、正規表現</li>
-                        <li><strong>クラウド</strong>: AWS、GCP（NLP専用サービス）</li>
-                        <li><strong>API開発</strong>: Flask、FastAPI、REST/GraphQL</li>
-                    </ul>
-                    
-                    <h3>言語・ドメイン知識</h3>
-                    <ul>
-                        <li><strong>多言語対応</strong>: 日本語、英語、中国語等の特性理解</li>
-                        <li><strong>専門分野</strong>: 医療、法律、金融等のドメイン知識</li>
-                        <li><strong>データ品質</strong>: アノテーション、バイアス対策</li>
-                        <li><strong>倫理・公平性</strong>: AI倫理、プライバシー保護</li>
-                    </ul>
-                    
-                    <h2>📈 キャリアパス</h2>
-                    <p><strong>初級（0-2年）</strong>: ジュニアNLPエンジニア<br>
-                    <strong>中級（3-5年）</strong>: NLPエンジニア<br>
-                    <strong>上級（5年以上）</strong>: シニアNLPエンジニア、NLPテックリード、対話AI責任者、NLP研究者</p>
-                    
-                    <h2>🎓 推奨学習パス</h2>
-                    <p><strong>Phase 1</strong>: Python基礎、機械学習、NLP入門<br>
-                    <strong>Phase 2</strong>: 深層学習基礎、Transformer理論、Hugging Face<br>
-                    <strong>Phase 3</strong>: タスク特化、ファインチューニング、評価・改善<br>
-                    <strong>Phase 4</strong>: 大規模言語モデル、マルチモーダル、本番運用</p>
-                `
-            },
-            'data-engineer': {
-                title: 'データエンジニア',
-                content: `
-                    <h2>🎯 職種概要</h2>
-                    <p>データエンジニアは、データ基盤の設計・構築・運用の専門家です。大規模データの収集、変換、保存、配信を効率的に行うシステムを構築し、データサイエンティストや機械学習エンジニアが活用できるデータ環境を提供します。</p>
-                    
-                    <h2>📋 主な業務内容</h2>
-                    <h3>データパイプライン構築</h3>
-                    <ul>
-                        <li><strong>ETL/ELT設計</strong>: データ抽出、変換、ロード処理</li>
-                        <li><strong>リアルタイム処理</strong>: ストリーミングデータの処理・配信</li>
-                        <li><strong>バッチ処理</strong>: 大容量データの定期処理</li>
-                        <li><strong>データ品質管理</strong>: バリデーション、クレンジング、監視</li>
-                    </ul>
-                    
-                    <h3>データ基盤設計・運用</h3>
-                    <ul>
-                        <li><strong>データレイク構築</strong>: 構造化・非構造化データの統合管理</li>
-                        <li><strong>データウェアハウス</strong>: 分析用データマートの設計・最適化</li>
-                        <li><strong>データカタログ</strong>: メタデータ管理、データ系譜追跡</li>
-                        <li><strong>セキュリティ</strong>: アクセス制御、暗号化、監査ログ</li>
-                    </ul>
-                    
-                    <h3>インフラ・パフォーマンス最適化</h3>
-                    <ul>
-                        <li><strong>スケーラブル設計</strong>: 大規模データ処理の分散アーキテクチャ</li>
-                        <li><strong>コスト最適化</strong>: ストレージ・計算リソースの効率化</li>
-                        <li><strong>監視・アラート</strong>: システム稼働状況の可視化・通知</li>
-                        <li><strong>災害復旧</strong>: バックアップ・復旧戦略の策定・実装</li>
-                    </ul>
-                    
-                    <h2>🛠️ 必要なスキル</h2>
-                    <h3>技術スキル（データ処理）</h3>
-                    <ul>
-                        <li><strong>SQL</strong>: 高度なクエリ最適化、ウィンドウ関数</li>
-                        <li><strong>Python/Scala</strong>: データ処理スクリプト、API開発</li>
-                        <li><strong>Apache Spark</strong>: 大規模分散データ処理</li>
-                        <li><strong>Apache Kafka</strong>: リアルタイムストリーミング</li>
-                    </ul>
-                    
-                    <h3>技術スキル（インフラ）</h3>
-                    <ul>
-                        <li><strong>クラウド</strong>: AWS、GCP、Azure（データサービス）</li>
-                        <li><strong>コンテナ</strong>: Docker、Kubernetes</li>
-                        <li><strong>IaC</strong>: Terraform、CloudFormation</li>
-                        <li><strong>CI/CD</strong>: Jenkins、GitHub Actions、データパイプライン自動化</li>
-                    </ul>
-                    
-                    <h3>データベース・ストレージ</h3>
-                    <ul>
-                        <li><strong>RDBMS</strong>: PostgreSQL、MySQL、Oracle</li>
-                        <li><strong>NoSQL</strong>: MongoDB、Cassandra、DynamoDB</li>
-                        <li><strong>データウェアハウス</strong>: Snowflake、BigQuery、Redshift</li>
-                        <li><strong>オブジェクトストレージ</strong>: S3、GCS、Azure Blob</li>
-                    </ul>
-                    
-                    <h2>📈 キャリアパス</h2>
-                    <p><strong>初級（0-2年）</strong>: ジュニアデータエンジニア<br>
-                    <strong>中級（3-5年）</strong>: データエンジニア<br>
-                    <strong>上級（5年以上）</strong>: シニアデータエンジニア、データプラットフォームエンジニア、データアーキテクト、DevOpsエンジニア</p>
-                    
-                    <h2>🎓 推奨学習パス</h2>
-                    <p><strong>Phase 1</strong>: SQL基礎、Python基礎、Linux/Shell<br>
-                    <strong>Phase 2</strong>: Apache Spark、ストリーミング、データベース<br>
-                    <strong>Phase 3</strong>: AWS/GCP、Docker/Kubernetes、IaC<br>
-                    <strong>Phase 4</strong>: データレイク、MLOps、リアルタイム分析</p>
+                    <h2>💡 まずは何から？</h2>
+                    <p>まずは<strong>機械学習エンジニアやデータエンジニア</strong>として実務経験を积み、複数のAI分野（画像認識、自然言語処理、推薦システム等）を経験することが重要です。<strong>システム設計</strong>の学習も並行して進めましょう。</p>
                 `
             },
             'product-manager': {
                 title: 'AIプロダクトマネージャー',
                 content: `
-                    <h2>🎯 職種概要</h2>
-                    <p>AIプロダクトマネージャーは、AI技術を活用したプロダクトの企画・開発・運用を統括する責任者です。ビジネス価値とユーザー体験を最大化するAIプロダクトを設計し、技術チームと協力して市場投入から成長まで全体をリードします。</p>
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>AIプロダクトマネージャーは、<strong>AIを使った製品・サービスの"企画・開発責任者"</strong>です。「どんなAIサービスを作るか？」を決めて、エンジニアチームと一緒に実際のサービスを世の中に送り出します。</p>
                     
-                    <h2>📋 主な業務内容</h2>
-                    <h3>プロダクト戦略・企画</h3>
+                    <h2>✨ やりがい・魅力</h2>
                     <ul>
-                        <li><strong>市場調査・分析</strong>: 競合分析、ユーザーニーズ調査、市場機会特定</li>
-                        <li><strong>プロダクトビジョン</strong>: 長期的なプロダクト方向性の策定</li>
-                        <li><strong>ロードマップ作成</strong>: 機能開発の優先順位・スケジュール計画</li>
-                        <li><strong>KPI設計</strong>: 成功指標の定義・測定・改善</li>
+                        <li><strong>自分が企画したサービスが世に出る</strong> - アイデアが実際のプロダクトになる達成感</li>
+                        <li><strong>多様なチームをまとめる</strong> - エンジニア、デザイナー、営業など様々な職種と協力</li>
+                        <li><strong>ユーザーの声を直接聞ける</strong> - 作ったサービスの反響や改善点が分かる</li>
+                        <li><strong>事業成長に直結</strong> - 売上や利用者数の増加に直接貢献できる</li>
                     </ul>
                     
-                    <h3>要件定義・仕様策定</h3>
+                    <h2>📱 具体的な案件例</h2>
                     <ul>
-                        <li><strong>ユーザーストーリー</strong>: ペルソナ設計、ユーザージャーニー設計</li>
-                        <li><strong>機能仕様</strong>: AI機能の詳細要件、UI/UX設計</li>
-                        <li><strong>技術要件</strong>: 性能要件、品質要件、制約条件の整理</li>
-                        <li><strong>データ要件</strong>: 学習データ、推論データの要件定義</li>
+                        <li><strong>写真アプリ</strong>: 「撮った写真を自動で整理・検索できるアプリ」の企画・開発を統括</li>
+                        <li><strong>ECサイト</strong>: 「ユーザーの好みを学習するレコメンド機能」の改善プロジェクトを推進</li>
+                        <li><strong>音楽アプリ</strong>: 「気分に合わせて音楽を提案するAI DJ機能」を企画・実装</li>
+                        <li><strong>フィットネスアプリ</strong>: 「運動フォームを自動チェックするAI機能」を開発</li>
+                        <li><strong>学習アプリ</strong>: 「個人の学習進度に合わせた問題出題AI」を設計</li>
                     </ul>
                     
-                    <h2>🛠️ 必要なスキル</h2>
-                    <h3>ビジネススキル</h3>
+                    <h2>👥 こんな人に向いています</h2>
                     <ul>
-                        <li><strong>戦略思考</strong>: 市場分析、競合戦略、事業モデル設計</li>
-                        <li><strong>プロダクト企画</strong>: ユーザー中心設計、機能優先順位付け</li>
-                        <li><strong>プロジェクト管理</strong>: アジャイル開発、スクラム、リーン手法</li>
-                        <li><strong>データ分析</strong>: KPI設計、A/Bテスト、ユーザー行動分析</li>
+                        <li><strong>アイデアを考えるのが好き</strong> - 「こんなサービスがあったら便利」を形にしたい</li>
+                        <li><strong>チームワークが得意</strong> - 様々な職種の人と協力してプロジェクトを進められる</li>
+                        <li><strong>ユーザー目線で考えられる</strong> - 「使う人にとって本当に便利か？」を重視できる</li>
+                        <li><strong>数字で効果を測るのが好き</strong> - 利用者数や満足度などのデータを分析できる</li>
+                        <li><strong>責任感がある</strong> - プロダクトの成功・失敗に責任を持てる</li>
                     </ul>
                     
-                    <h3>AI技術理解</h3>
-                    <ul>
-                        <li><strong>機械学習基礎</strong>: アルゴリズム理解、適用可能性評価</li>
-                        <li><strong>AI倫理・公平性</strong>: バイアス、プライバシー、説明可能性</li>
-                        <li><strong>データ要件</strong>: データ品質、アノテーション、学習データ設計</li>
-                        <li><strong>システム設計</strong>: API設計、スケーラビリティ、パフォーマンス</li>
-                    </ul>
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>AIサービスの企画・開発経験</strong>は非常に価値が高く、将来的にはCPO（最高プロダクト責任者）や起業家として活躍することも可能です。技術とビジネスの両方を理解できる人材として重宝されます。</p>
                     
-                    <h2>📈 キャリアパス</h2>
-                    <p><strong>初級（0-3年）</strong>: アソシエイトプロダクトマネージャー<br>
-                    <strong>中級（3-6年）</strong>: プロダクトマネージャー<br>
-                    <strong>上級（6年以上）</strong>: シニアプロダクトマネージャー、プロダクトディレクター</p>
-                    
-                    <h2>🎓 推奨学習パス</h2>
-                    <p><strong>Phase 1</strong>: プロダクト管理、ユーザー中心設計、データ分析<br>
-                    <strong>Phase 2</strong>: 機械学習基礎、AI倫理、AIプロダクト事例<br>
-                    <strong>Phase 3</strong>: アジャイル開発、A/Bテスト、プレゼンテーション<br>
-                    <strong>Phase 4</strong>: 業界専門性、リーダーシップ、事業開発</p>
+                    <h2>💡 まずは何から？</h2>
+                    <p>まずは<strong>身の回りのアプリやサービス</strong>を使って「なぜこの機能があるのか？」「どう改善できるか？」を考える習慣をつけましょう。<strong>Figma</strong>などでアイデアを図にしてみるのもおすすめです。</p>
                 `
             },
-            'cv-engineer': {
-                title: 'コンピュータビジョンエンジニア',
+            'data-engineer': {
+                title: 'データエンジニア',
                 content: `
-                    <h2>🎯 職種概要</h2>
-                    <p>コンピュータビジョンエンジニアは、画像・映像処理技術の専門家です。カメラやセンサーから得られる視覚情報をコンピュータが理解・処理できるシステムを開発し、自動運転、医療画像診断、製造業の品質管理などの実用的なアプリケーションを構築します。</p>
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>データエンジニアは、<strong>AIが使うデータを準備・管理する"データの配管工"</strong>です。散らばっているデータを集めて、AIが使いやすい形に整理し、安全に保管・提供するシステムを作ります。</p>
                     
-                    <h2>📋 主な業務内容</h2>
-                    <h3>画像処理・解析</h3>
+                    <h2>✨ やりがい・魅力</h2>
                     <ul>
-                        <li><strong>前処理</strong>: ノイズ除去、正規化、データ拡張</li>
-                        <li><strong>特徴抽出</strong>: エッジ検出、テクスチャ分析、キーポイント抽出</li>
-                        <li><strong>物体検出</strong>: YOLO、R-CNN等による物体認識・位置特定</li>
-                        <li><strong>セグメンテーション</strong>: セマンティック・インスタンスセグメンテーション</li>
+                        <li><strong>すべてのAIプロジェクトの基盤を支える</strong> - データがなければAIは動かない、重要な役割</li>
+                        <li><strong>大規模システムを構築</strong> - 数億件のデータを扱う高性能システムを作る醍醐味</li>
+                        <li><strong>最新のクラウド技術を活用</strong> - AWS、Google Cloud等の最先端技術を使える</li>
+                        <li><strong>安定した需要</strong> - どの業界でもデータ活用は必須、将来性が高い</li>
                     </ul>
                     
-                    <h3>深層学習モデル開発</h3>
+                    <h2>🏗️ 具体的な案件例</h2>
                     <ul>
-                        <li><strong>CNN設計</strong>: ResNet、EfficientNet、Vision Transformer</li>
-                        <li><strong>モデル学習</strong>: データセット構築、学習パラメータ調整</li>
-                        <li><strong>転移学習</strong>: 事前学習モデルの活用・ファインチューニング</li>
-                        <li><strong>モデル最適化</strong>: 量子化、プルーニング、知識蒸留</li>
+                        <li><strong>ECサイト</strong>: 「商品データ、購買データ、ログデータを統合する基盤」を構築</li>
+                        <li><strong>製造業</strong>: 「工場の機械から送られる大量のセンサーデータ」を収集・分析できるシステムを開発</li>
+                        <li><strong>金融業</strong>: 「取引データを安全に保管・分析するデータウェアハウス」を設計</li>
+                        <li><strong>医療業</strong>: 「患者データを匿名化して研究用に提供するシステム」を構築</li>
+                        <li><strong>広告業</strong>: 「リアルタイムで広告効果を測定できるデータパイプライン」を開発</li>
                     </ul>
                     
-                    <h2>🛠️ 必要なスキル</h2>
-                    <h3>技術スキル（コンピュータビジョン）</h3>
+                    <h2>👥 こんな人に向いています</h2>
                     <ul>
-                        <li><strong>画像処理</strong>: OpenCV、PIL、scikit-image</li>
-                        <li><strong>深層学習</strong>: PyTorch、TensorFlow、Keras</li>
-                        <li><strong>数学</strong>: 線形代数、統計学、信号処理</li>
-                        <li><strong>3D処理</strong>: PCL、Open3D、メッシュ処理</li>
+                        <li><strong>几帳面で整理好き</strong> - データを綺麗に整理・管理することにやりがいを感じる</li>
+                        <li><strong>システム構築が好き</strong> - 大規模なシステムを設計・構築することが楽しい</li>
+                        <li><strong>安定性を重視</strong> - システムが確実に動作することにこだわりがある</li>
+                        <li><strong>技術学習が好き</strong> - 新しいデータベースやクラウドサービスを学ぶのが楽しい</li>
+                        <li><strong>縁の下の力持ちタイプ</strong> - 目立たないけれど重要な役割を担うことに価値を感じる</li>
                     </ul>
                     
-                    <h3>技術スキル（エンジニアリング）</h3>
-                    <ul>
-                        <li><strong>プログラミング</strong>: Python、C++、CUDA</li>
-                        <li><strong>GPU計算</strong>: CUDA、OpenCL、TensorRT</li>
-                        <li><strong>クラウド</strong>: AWS、GCP（画像処理サービス）</li>
-                        <li><strong>エッジデバイス</strong>: Raspberry Pi、Jetson、モバイル最適化</li>
-                    </ul>
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>データ活用が進む今、最も安定した需要がある</strong>職種です。技術力を身につければ、データアーキテクトやCTOなど、技術責任者への道も開けます。リモートワークもしやすい職種です。</p>
                     
-                    <h2>📈 キャリアパス</h2>
-                    <p><strong>初級（0-2年）</strong>: ジュニアコンピュータビジョンエンジニア<br>
-                    <strong>中級（3-5年）</strong>: コンピュータビジョンエンジニア<br>
-                    <strong>上級（5年以上）</strong>: シニアコンピュータビジョンエンジニア、コンピュータビジョンアーキテクト</p>
-                    
-                    <h2>🎓 推奨学習パス</h2>
-                    <p><strong>Phase 1</strong>: Python基礎、OpenCV、機械学習<br>
-                    <strong>Phase 2</strong>: 深層学習基礎、CNN理論、画像分類<br>
-                    <strong>Phase 3</strong>: 物体検出、セグメンテーション、画像生成<br>
-                    <strong>Phase 4</strong>: リアルタイム処理、エッジデプロイ、3D処理</p>
+                    <h2>💡 まずは何から？</h2>
+                    <p><strong>SQL</strong>というデータベース言語から始めましょう。ExcelやGoogle スプレッドシートでデータを整理する経験があれば、その延長として学べます。<strong>Python</strong>も並行して学ぶと良いでしょう。</p>
                 `
             },
-            'research': {
-                title: 'リサーチサイエンティスト',
+            'ai-security-engineer': {
+                title: 'AIセキュリティエンジニア',
                 content: `
-                    <h2>🎯 職種概要</h2>
-                    <p>リサーチサイエンティストは、AI・機械学習分野の研究開発を専門とする研究者です。新しいアルゴリズムや手法の開発、既存技術の改良、理論的基盤の構築を行い、学術論文の執筆や国際会議での発表を通じて科学的知見を社会に還元します。</p>
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>AIセキュリティエンジニアは、<strong>AIシステムを悪用や攻撃から守る"AIの守護者"</strong>です。AIが正しく・安全に動作するよう、セキュリティ対策を設計・実装し、個人情報保護やAI倫理の技術的実現を担当します。</p>
                     
-                    <h2>📋 主な業務内容</h2>
-                    <h3>研究企画・推進</h3>
+                    <h2>✨ やりがい・魅力</h2>
                     <ul>
-                        <li><strong>研究テーマ設定</strong>: 新規性・実用性のある研究課題の発見</li>
-                        <li><strong>文献調査</strong>: 最新研究動向の把握・分析</li>
-                        <li><strong>仮説構築</strong>: 理論的仮説の立案・検証計画策定</li>
-                        <li><strong>実験設計</strong>: 統計的に有意な実験の設計・実施</li>
+                        <li><strong>社会の安全を守る使命感</strong> - AIの悪用を防ぎ、社会に安全なAIを提供</li>
+                        <li><strong>最先端の攻防技術</strong> - 日々進化するAI攻撃手法と防御技術の最前線</li>
+                        <li><strong>高い専門性</strong> - AI×セキュリティの希少なスキルで高く評価される</li>
+                        <li><strong>倫理的な技術者として</strong> - 公正で透明なAI社会の実現に貢献</li>
                     </ul>
                     
-                    <h3>アルゴリズム開発</h3>
+                    <h2>🛡️ 具体的な案件例</h2>
                     <ul>
-                        <li><strong>新手法開発</strong>: 既存手法の限界を超える新アルゴリズム</li>
-                        <li><strong>理論解析</strong>: 数学的な性能保証・収束性証明</li>
-                        <li><strong>実装・検証</strong>: プロトタイプ実装・性能評価</li>
-                        <li><strong>ベンチマーク</strong>: 標準データセットでの性能比較</li>
+                        <li><strong>金融AI防御</strong>: 「不正取引検知AIが騙されないよう、敵対的攻撃への対策」を実装</li>
+                        <li><strong>医療AI保護</strong>: 「診断AIが患者データを漏洩しないよう、プライバシー保護技術」を導入</li>
+                        <li><strong>自動運転セキュリティ</strong>: 「信号認識AIが偽の信号に騙されない防御システム」を開発</li>
+                        <li><strong>採用AI公平性</strong>: 「採用判定AIが性別・年齢で差別しないよう、バイアス検出システム」を構築</li>
+                        <li><strong>チャットボット安全性</strong>: 「AIチャットボットが不適切な発言をしないよう、倫理フィルター」を実装</li>
                     </ul>
                     
-                    <h2>🛠️ 必要なスキル</h2>
-                    <h3>研究スキル</h3>
+                    <h2>👥 こんな人に向いています</h2>
                     <ul>
-                        <li><strong>数学・統計</strong>: 線形代数、確率論、最適化理論、統計的推論</li>
-                        <li><strong>機械学習理論</strong>: 学習理論、情報理論、計算複雑性</li>
-                        <li><strong>実験設計</strong>: 統計的仮説検定、A/Bテスト、因果推論</li>
-                        <li><strong>批判的思考</strong>: 既存研究の限界分析・改善点発見</li>
+                        <li><strong>正義感が強い</strong> - 悪用や不正を防ぎ、社会を守りたい気持ちがある</li>
+                        <li><strong>細かい作業が得意</strong> - セキュリティホールを見つける注意深さがある</li>
+                        <li><strong>倫理観がしっかりしている</strong> - 公正で透明なAI社会を実現したい</li>
+                        <li><strong>学習意欲が高い</strong> - 新しい攻撃手法や防御技術を常に学び続けられる</li>
+                        <li><strong>論理的思考が得意</strong> - 複雑なセキュリティ問題を体系的に解決できる</li>
                     </ul>
                     
-                    <h3>技術スキル</h3>
-                    <ul>
-                        <li><strong>プログラミング</strong>: Python、R、C++、数値計算</li>
-                        <li><strong>深層学習</strong>: PyTorch、TensorFlow、JAX</li>
-                        <li><strong>科学計算</strong>: NumPy、SciPy、MATLAB</li>
-                        <li><strong>可視化</strong>: Matplotlib、Plotly、TikZ</li>
-                    </ul>
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>AIが普及する今、最も重要性が高まっている</strong>分野です。AI×セキュリティの専門家は非常に希少で、将来的にはCISO（最高情報セキュリティ責任者）やAI倫理責任者など、企業の重要ポジションに就くことが可能です。</p>
                     
-                    <h2>📈 キャリアパス</h2>
-                    <p><strong>初級（0-3年）</strong>: ポスドク研究員<br>
-                    <strong>中級（3-7年）</strong>: リサーチサイエンティスト<br>
-                    <strong>上級（7年以上）</strong>: シニアリサーチサイエンティスト、リサーチディレクター</p>
-                    
-                    <h2>🎓 推奨学習パス</h2>
-                    <p><strong>Phase 1</strong>: 線形代数、確率・統計、最適化<br>
-                    <strong>Phase 2</strong>: 学習理論、情報理論、深層学習理論<br>
-                    <strong>Phase 3</strong>: 論文読解、実装・実験、論文執筆<br>
-                    <strong>Phase 4</strong>: 専門領域、学際研究、応用研究</p>
+                    <h2>💡 まずは何から？</h2>
+                    <p>まずは<strong>一般的なセキュリティ知識</strong>から学び、並行して<strong>機械学習の基礎</strong>を身につけましょう。「AIがどう攻撃されるか」のニュースや事例を読むことから始めるのもおすすめです。</p>
                 `
             },
-            'mlops-engineer': {
-                title: 'MLOpsエンジニア',
+            'edge-ai-engineer': {
+                title: 'エッジAIエンジニア',
                 content: `
-                    <h2>🎯 職種概要</h2>
-                    <p>MLOpsエンジニアは、機械学習システムの運用・自動化・基盤構築の専門家です。研究開発された機械学習モデルを安定的かつ効率的に本番環境で運用するためのインフラ・プロセス・ツールを設計・構築・改善します。</p>
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>エッジAIエンジニアは、<strong>スマホや車載機器でAIを動かす"小型AI実装の専門家"</strong>です。クラウドに依存せず、手元のデバイスでリアルタイムにAIが動作するシステムを開発します。</p>
                     
-                    <h2>📋 主な業務内容</h2>
-                    <h3>ML基盤構築</h3>
+                    <h2>✨ やりがい・魅力</h2>
                     <ul>
-                        <li><strong>MLプラットフォーム設計</strong>: 全社横断的なML基盤アーキテクチャ</li>
-                        <li><strong>パイプライン自動化</strong>: 学習・推論・デプロイの完全自動化</li>
-                        <li><strong>リソース管理</strong>: GPU・CPU・ストレージの効率的な割り当て</li>
-                        <li><strong>セキュリティ</strong>: モデル・データの保護、アクセス制御</li>
+                        <li><strong>身近なデバイスでAIを実現</strong> - スマホ、車、ロボットなど日常的な機器にAIを組み込む</li>
+                        <li><strong>リアルタイム処理の醍醐味</strong> - 瞬時にAI判定が必要な場面での技術的挑戦</li>
+                        <li><strong>ハードウェアとソフトウェアの融合</strong> - 物理的な制約の中で最適解を見つける面白さ</li>
+                        <li><strong>IoT・自動運転等の最前線</strong> - 次世代技術の中核を担う重要な役割</li>
                     </ul>
                     
-                    <h3>運用・監視</h3>
+                    <h2>📱 具体的な案件例</h2>
                     <ul>
-                        <li><strong>モデル監視</strong>: 性能劣化・ドリフト検知システム</li>
-                        <li><strong>ログ・メトリクス</strong>: 包括的な運用データ収集・分析</li>
-                        <li><strong>アラート・対応</strong>: 障害検知・自動復旧システム</li>
-                        <li><strong>SLA管理</strong>: 可用性・レスポンス時間の保証</li>
+                        <li><strong>スマホアプリ</strong>: 「カメラで撮影した料理のカロリーを瞬時に計算するアプリ」をオフラインで動作</li>
+                        <li><strong>車載システム</strong>: 「ドライバーの居眠りを検知して警告する車載AI」をリアルタイム実装</li>
+                        <li><strong>工場IoT</strong>: 「製造ラインの異常を現場で即座に検知するAIセンサー」を開発</li>
+                        <li><strong>ロボット</strong>: 「家庭用お掃除ロボットの障害物回避AI」を小型チップに実装</li>
+                        <li><strong>ウェアラブル</strong>: 「スマートウォッチでの健康状態モニタリングAI」を省電力で実現</li>
                     </ul>
                     
-                    <h3>CI/CD・自動化</h3>
+                    <h2>👥 こんな人に向いています</h2>
                     <ul>
-                        <li><strong>継続的統合</strong>: コード・モデル・データの自動テスト</li>
-                        <li><strong>継続的デプロイ</strong>: カナリアリリース・ブルーグリーンデプロイ</li>
-                        <li><strong>バージョン管理</strong>: モデル・データ・コードの統合管理</li>
-                        <li><strong>ロールバック</strong>: 問題発生時の迅速な復旧</li>
+                        <li><strong>効率化・最適化が好き</strong> - 限られたリソースで最大の性能を引き出すことに興味</li>
+                        <li><strong>ハードウェアに興味がある</strong> - 電子機器の仕組みや制約を理解したい</li>
+                        <li><strong>実用的なものを作りたい</strong> - 人の生活に直接役立つAIシステムを開発したい</li>
+                        <li><strong>細かい調整が得意</strong> - 性能とバッテリー消費のバランスを取る作業が好き</li>
+                        <li><strong>新しい技術に敏感</strong> - 最新のAIチップや組み込み技術を学び続けられる</li>
                     </ul>
                     
-                    <h2>🛠️ 必要なスキル</h2>
-                    <h3>インフラ・クラウド</h3>
-                    <ul>
-                        <li><strong>クラウドプラットフォーム</strong>: AWS、GCP、Azure</li>
-                        <li><strong>コンテナ</strong>: Docker、Kubernetes、Helm</li>
-                        <li><strong>IaC</strong>: Terraform、CloudFormation、Ansible</li>
-                        <li><strong>サービスメッシュ</strong>: Istio、Linkerd</li>
-                    </ul>
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>IoT・自動運転・ロボティクス</strong>分野の急成長に伴い、需要が急速に拡大している職種です。ハードウェアとAIの両方を理解できる希少な人材として、自動車メーカーや家電メーカーなど幅広い業界で活躍できます。</p>
                     
-                    <h3>MLOpsツール</h3>
-                    <ul>
-                        <li><strong>実験管理</strong>: MLflow、Weights & Biases、Neptune</li>
-                        <li><strong>パイプライン</strong>: Kubeflow、Apache Airflow、Prefect</li>
-                        <li><strong>モデル管理</strong>: MLflow、DVC、Pachyderm</li>
-                        <li><strong>特徴量ストア</strong>: Feast、Hopsworks</li>
-                    </ul>
-                    
-                    <h3>監視・運用</h3>
-                    <ul>
-                        <li><strong>監視</strong>: Prometheus、Grafana、DataDog</li>
-                        <li><strong>ログ管理</strong>: ELK Stack、Fluentd</li>
-                        <li><strong>APM</strong>: New Relic、AppDynamics</li>
-                        <li><strong>セキュリティ</strong>: Vault、RBAC、ネットワークセキュリティ</li>
-                    </ul>
-                    
-                    <h2>📈 キャリアパス</h2>
-                    <p><strong>初級（0-2年）</strong>: ジュニアMLOpsエンジニア<br>
-                    <strong>中級（3-5年）</strong>: MLOpsエンジニア<br>
-                    <strong>上級（5年以上）</strong>: シニアMLOpsエンジニア、MLプラットフォームアーキテクト、DevOpsリード</p>
-                    
-                    <h2>🎓 推奨学習パス</h2>
-                    <p><strong>Phase 1</strong>: Linux基礎、Docker、Kubernetes基礎<br>
-                    <strong>Phase 2</strong>: クラウド基礎、CI/CD、IaC（Terraform）<br>
-                    <strong>Phase 3</strong>: MLflow、Kubeflow、監視システム<br>
-                    <strong>Phase 4</strong>: 分散システム、セキュリティ、スケーラブル設計</p>
+                    <h2>💡 まずは何から？</h2>
+                    <p><strong>機械学習の基礎</strong>を学んだ後、<strong>Raspberry Pi</strong>のような小型コンピューターでAIを動かす実験から始めましょう。<strong>C++</strong>やハードウェアの知識も並行して学ぶと良いでしょう。</p>
                 `
-            }
+            },
+            'ai-trainer': {
+                title: 'AI研修・教育エンジニア',
+                content: `
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>AI研修・教育エンジニアは、<strong>AIの知識を他の人に教える"AIの先生"</strong>です。技術者向けの研修プログラム作成、AI教育コンテンツの開発、企業のAI人材育成を担当します。</p>
+                    
+                    <h2>✨ やりがい・魅力</h2>
+                    <ul>
+                        <li><strong>人の成長を直接支援</strong> - 教えた人がAIエンジニアとして活躍する姿を見られる</li>
+                        <li><strong>AI普及に貢献</strong> - 社会全体のAIリテラシー向上に直接的に貢献</li>
+                        <li><strong>幅広いAI知識が身につく</strong> - 教えるために様々なAI分野を学ぶ必要がある</li>
+                        <li><strong>創造的な仕事</strong> - 分かりやすい教材や実習を企画・開発する楽しさ</li>
+                    </ul>
+                    
+                    <h2>📚 具体的な案件例</h2>
+                    <ul>
+                        <li><strong>企業研修</strong>: 「非エンジニア向けのAI基礎研修」を企画・実施し、100名の社員をAI人材に育成</li>
+                        <li><strong>オンライン講座</strong>: 「初心者向けPython機械学習コース」を開発し、数千人が受講</li>
+                        <li><strong>ハンズオン研修</strong>: 「画像認識AIを実際に作る1日集中講座」を設計・運営</li>
+                        <li><strong>教材開発</strong>: 「中学生でも分かるAI入門テキスト」を執筆・出版</li>
+                        <li><strong>企業コンサル</strong>: 「AI人材育成計画の策定」から「研修実施」まで一貫サポート</li>
+                    </ul>
+                    
+                    <h2>👥 こんな人に向いています</h2>
+                    <ul>
+                        <li><strong>教えることが好き</strong> - 人に何かを教えて理解してもらうことに喜びを感じる</li>
+                        <li><strong>コミュニケーション能力が高い</strong> - 複雑な技術を分かりやすく説明できる</li>
+                        <li><strong>学習意欲が高い</strong> - 教えるために自分も常に新しい技術を学び続けられる</li>
+                        <li><strong>人の成長を支援したい</strong> - 他の人のキャリアアップを手助けしたい気持ちがある</li>
+                        <li><strong>企画・創造が得意</strong> - 面白くて効果的な研修プログラムを考案できる</li>
+                    </ul>
+                    
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>AI人材不足が深刻な今、最も社会的意義の高い</strong>職種の一つです。企業のAI人材育成責任者や、独立してAI教育コンサルタントとして活躍することも可能です。教育分野は景気に左右されにくく、安定したキャリアを築けます。</p>
+                    
+                    <h2>💡 まずは何から？</h2>
+                    <p>まず<strong>自分自身がAIの基礎知識</strong>を身につけましょう。その後、<strong>ブログやYouTube</strong>でAI技術を分かりやすく説明する練習をしてみてください。<strong>プレゼンテーション</strong>や<strong>教材作成</strong>のスキルも重要です。</p>
+                `
+            },
+            // ... existing career details ...
         };
 
         // キャリアパス定義
@@ -1335,6 +1129,10 @@
                     else if (href.includes('computer-vision-engineer.md')) careerId = 'cv-engineer';
                     else if (href.includes('research-scientist.md')) careerId = 'research';
                     else if (href.includes('mlops-engineer.md')) careerId = 'mlops-engineer';
+                    else if (href.includes('ai-architect.md')) careerId = 'ai-architect';
+                    else if (href.includes('ai-security-engineer.md')) careerId = 'ai-security-engineer';
+                    else if (href.includes('edge-ai-engineer.md')) careerId = 'edge-ai-engineer';
+                    else if (href.includes('ai-trainer.md')) careerId = 'ai-trainer';
                     
                     if (careerId) {
                         showCareerDetail(careerId);
