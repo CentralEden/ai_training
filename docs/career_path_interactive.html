@@ -345,7 +345,8 @@
                 techDepth: 3,
                 businessInvolvement: 4,
                 learningPath: '共通基礎コース → 時系列解析 → データエンジニアリング',
-                nextSteps: ['AIコンサルタント', 'AIプロダクトマネージャー']
+                nextSteps: ['AIコンサルタント', 'AIプロダクトマネージャー'],
+                detailLink: 'careers/data-scientist.md'
             },
             'ml-engineer': {
                 name: '機械学習エンジニア',
@@ -353,7 +354,8 @@
                 techDepth: 5,
                 businessInvolvement: 2,
                 learningPath: '共通基礎コース → 画像認識 or NLP → データエンジニアリング',
-                nextSteps: ['MLテックリード', 'MLアーキテクト']
+                nextSteps: ['MLテックリード', 'MLアーキテクト'],
+                detailLink: 'careers/machine-learning-engineer.md'
             },
             'data-engineer': {
                 name: 'データエンジニア',
@@ -361,7 +363,8 @@
                 techDepth: 4,
                 businessInvolvement: 2,
                 learningPath: '共通基礎コース → データエンジニアリング → 異常検知',
-                nextSteps: ['データアーキテクト', 'プラットフォームエンジニア']
+                nextSteps: ['データアーキテクト', 'プラットフォームエンジニア'],
+                detailLink: 'careers/data-engineer.md'
             },
             'research': {
                 name: 'リサーチサイエンティスト',
@@ -369,7 +372,8 @@
                 techDepth: 5,
                 businessInvolvement: 1,
                 learningPath: '共通基礎コース → 複数専門分野 → 研究プロジェクト',
-                nextSteps: ['研究ディレクター', 'CTO']
+                nextSteps: ['研究ディレクター', 'CTO'],
+                detailLink: 'careers/research-scientist.md'
             },
             'consultant': {
                 name: 'AIコンサルタント',
@@ -377,7 +381,8 @@
                 techDepth: 2,
                 businessInvolvement: 5,
                 learningPath: '共通基礎コース → 時系列解析 → コンサルタント向けコース',
-                nextSteps: ['パートナー', '独立コンサルタント']
+                nextSteps: ['パートナー', '独立コンサルタント'],
+                detailLink: 'careers/ai-consultant.md'
             },
             'product-manager': {
                 name: 'AIプロダクトマネージャー',
@@ -385,7 +390,8 @@
                 techDepth: 2,
                 businessInvolvement: 5,
                 learningPath: '共通基礎コース → 推薦システム → PM向けコース',
-                nextSteps: ['CPO', 'VP of Product']
+                nextSteps: ['CPO', 'VP of Product'],
+                detailLink: 'careers/ai-product-manager.md'
             },
             'business-dev': {
                 name: 'AI事業開発',
@@ -393,7 +399,8 @@
                 techDepth: 2,
                 businessInvolvement: 5,
                 learningPath: '共通基礎コース → 時系列解析 → 事業開発コース',
-                nextSteps: ['新規事業部門長', '起業']
+                nextSteps: ['新規事業部門長', '起業'],
+                detailLink: 'careers/ai-business-development.md'
             },
             'cv-engineer': {
                 name: 'コンピュータビジョンエンジニア',
@@ -401,7 +408,8 @@
                 techDepth: 5,
                 businessInvolvement: 2,
                 learningPath: '共通基礎コース → 画像認識 → 異常検知',
-                nextSteps: ['CVテックリード', '自動運転エンジニア']
+                nextSteps: ['CVテックリード', '自動運転エンジニア'],
+                detailLink: 'careers/computer-vision-engineer.md'
             },
             'nlp-engineer': {
                 name: '自然言語処理エンジニア',
@@ -409,7 +417,8 @@
                 techDepth: 5,
                 businessInvolvement: 2,
                 learningPath: '共通基礎コース → 自然言語処理 → 推薦システム',
-                nextSteps: ['NLPテックリード', '対話AI責任者']
+                nextSteps: ['NLPテックリード', '対話AI責任者'],
+                detailLink: 'careers/nlp-engineer.md'
             },
             'audio-engineer': {
                 name: '音声・音響エンジニア',
@@ -417,7 +426,8 @@
                 techDepth: 5,
                 businessInvolvement: 2,
                 learningPath: '共通基礎コース → 音声処理 → 異常検知',
-                nextSteps: ['音声技術リード', 'AI音響エンジニア']
+                nextSteps: ['音声技術リード', 'AI音響エンジニア'],
+                detailLink: 'careers/audio-engineer.md'
             },
             'robotics-engineer': {
                 name: 'ロボティクスエンジニア',
@@ -425,7 +435,8 @@
                 techDepth: 5,
                 businessInvolvement: 2,
                 learningPath: '共通基礎コース → 画像認識 → 制御システム',
-                nextSteps: ['ロボティクスリード', '自律システム設計者']
+                nextSteps: ['ロボティクスリード', '自律システム設計者'],
+                detailLink: 'careers/robotics-engineer.md'
             }
         };
 
@@ -506,6 +517,11 @@
                             <div class="learning-path">
                                 <strong>推奨学習パス:</strong><br>
                                 ${career.learningPath}
+                            </div>
+                            <div style="margin-top: 15px;">
+                                <a href="${career.detailLink}" style="color: #ffd700; text-decoration: none; font-weight: bold;">
+                                    📖 ${career.name}の詳細情報を見る →
+                                </a>
                             </div>
                         </div>
                     `;
