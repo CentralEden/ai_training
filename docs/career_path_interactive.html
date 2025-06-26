@@ -189,6 +189,151 @@
             visibility: visible;
             opacity: 1;
         }
+
+        /* モーダルスタイル */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 90%;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .close {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+            padding: 5px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .close:hover {
+            background: rgba(255,255,255,0.2);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 30px;
+            color: white;
+            max-height: calc(90vh - 120px);
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+
+        .modal-body h1 {
+            color: #ffd700;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .modal-body h2 {
+            color: #ffd700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            border-bottom: 2px solid rgba(255,215,0,0.3);
+            padding-bottom: 5px;
+        }
+
+        .modal-body h3 {
+            color: #87ceeb;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .modal-body ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .modal-body li {
+            margin-bottom: 8px;
+        }
+
+        .modal-body strong {
+            color: #ffd700;
+        }
+
+        .modal-body a {
+            color: #87ceeb;
+            text-decoration: none;
+        }
+
+        .modal-body a:hover {
+            color: #ffd700;
+            text-decoration: underline;
+        }
+
+        .modal-body p {
+            margin-bottom: 15px;
+        }
+
+        /* スクロールバースタイル */
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-body::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 4px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.5);
+        }
     </style>
 </head>
 <body>
@@ -336,7 +481,440 @@
         <div id="learning-path-recommendation"></div>
     </div>
 
+    <!-- モーダル -->
+    <div id="career-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body" id="modal-content">
+                <!-- キャリア詳細がここに表示される -->
+            </div>
+        </div>
+    </div>
+
     <script>
+        // キャリア詳細データ
+        const careerDetails = {
+            'data-science': {
+                title: 'データサイエンティスト',
+                content: `
+                    <h2>🎯 職種概要</h2>
+                    <p>データサイエンティストは、データ分析とビジネス価値創出のスペシャリストです。統計学、機械学習、ビジネス知識を組み合わせて、データから洞察を抽出し、意思決定を支援します。</p>
+                    
+                    <h2>📋 主な業務内容</h2>
+                    <h3>データ分析・モデリング</h3>
+                    <ul>
+                        <li><strong>探索的データ分析（EDA）</strong>: データの特徴や傾向を把握</li>
+                        <li><strong>統計的分析</strong>: 仮説検定、回帰分析、分散分析など</li>
+                        <li><strong>機械学習モデリング</strong>: 予測モデル、分類モデルの構築</li>
+                        <li><strong>A/Bテスト設計・分析</strong>: 施策効果の定量的評価</li>
+                    </ul>
+                    
+                    <h3>ビジネス価値創出</h3>
+                    <ul>
+                        <li><strong>KPI設計・改善提案</strong>: ビジネス指標の定義と改善案提示</li>
+                        <li><strong>意思決定支援</strong>: データに基づく戦略的提言</li>
+                        <li><strong>レポート作成</strong>: 経営層向け分析結果の可視化・報告</li>
+                        <li><strong>ROI分析</strong>: 施策の費用対効果測定</li>
+                    </ul>
+                    
+                    <h2>🛠️ 必要なスキル</h2>
+                    <h3>技術スキル</h3>
+                    <ul>
+                        <li><strong>プログラミング</strong>: Python、R、SQL</li>
+                        <li><strong>統計・数学</strong>: 統計学、線形代数、確率論</li>
+                        <li><strong>機械学習</strong>: scikit-learn、pandas、NumPy</li>
+                        <li><strong>可視化</strong>: Matplotlib、Seaborn、Plotly、Tableau</li>
+                    </ul>
+                    
+                    <h3>ビジネススキル</h3>
+                    <ul>
+                        <li><strong>ドメイン知識</strong>: 担当業界・事業の深い理解</li>
+                        <li><strong>問題設定</strong>: ビジネス課題をデータ分析問題に翻訳</li>
+                        <li><strong>コミュニケーション</strong>: 非技術者への分析結果説明</li>
+                        <li><strong>プロジェクト管理</strong>: 分析プロジェクトの進行管理</li>
+                    </ul>
+                    
+                    <h2>📈 キャリアパス</h2>
+                    <p><strong>初級（0-2年）</strong>: ジュニアデータサイエンティスト<br>
+                    <strong>中級（3-5年）</strong>: シニアデータサイエンティスト<br>
+                    <strong>上級（5年以上）</strong>: リードデータサイエンティスト、データサイエンスマネージャー</p>
+                    
+                    <h2>🎓 推奨学習パス</h2>
+                    <p><strong>Phase 1</strong>: 統計学基礎、Python基礎、SQL基礎<br>
+                    <strong>Phase 2</strong>: 機械学習（教師あり・なし学習）<br>
+                    <strong>Phase 3</strong>: 時系列解析、A/Bテスト、ビジネス分析<br>
+                    <strong>Phase 4</strong>: 深層学習、因果推論、MLOps</p>
+                `
+            },
+            'ml-engineer': {
+                title: '機械学習エンジニア',
+                content: `
+                    <h2>🎯 職種概要</h2>
+                    <p>機械学習エンジニアは、MLシステムの設計・実装・運用のエキスパートです。研究段階のモデルを本番環境で動作する実用的なシステムに変換し、継続的な改善とスケーラブルな運用を実現します。</p>
+                    
+                    <h2>📋 主な業務内容</h2>
+                    <h3>モデル開発・実装</h3>
+                    <ul>
+                        <li><strong>アルゴリズム実装</strong>: 最新の機械学習手法のコード化</li>
+                        <li><strong>モデル最適化</strong>: パフォーマンス向上、メモリ効率化</li>
+                        <li><strong>特徴量エンジニアリング</strong>: 効果的な特徴量の設計・実装</li>
+                        <li><strong>ハイパーパラメータ調整</strong>: 自動調整システムの構築</li>
+                    </ul>
+                    
+                    <h3>システム設計・構築</h3>
+                    <ul>
+                        <li><strong>MLパイプライン構築</strong>: 学習から推論までの自動化</li>
+                        <li><strong>モデルサービング</strong>: API化、リアルタイム推論システム</li>
+                        <li><strong>スケーラブル設計</strong>: 大規模データ・高負荷対応</li>
+                        <li><strong>マイクロサービス化</strong>: モデルの独立デプロイ・管理</li>
+                    </ul>
+                    
+                    <h2>🛠️ 必要なスキル</h2>
+                    <h3>技術スキル（機械学習）</h3>
+                    <ul>
+                        <li><strong>深層学習</strong>: TensorFlow、PyTorch、Keras</li>
+                        <li><strong>機械学習ライブラリ</strong>: scikit-learn、XGBoost、LightGBM</li>
+                        <li><strong>数学・統計</strong>: 線形代数、確率・統計、最適化理論</li>
+                        <li><strong>プログラミング</strong>: Python、C++、Java、Go</li>
+                    </ul>
+                    
+                    <h3>技術スキル（エンジニアリング）</h3>
+                    <ul>
+                        <li><strong>クラウド</strong>: AWS、GCP、Azure（ML専用サービス）</li>
+                        <li><strong>コンテナ</strong>: Docker、Kubernetes</li>
+                        <li><strong>データベース</strong>: PostgreSQL、MongoDB、Redis</li>
+                        <li><strong>CI/CD</strong>: Jenkins、GitLab CI、GitHub Actions</li>
+                    </ul>
+                    
+                    <h2>📈 キャリアパス</h2>
+                    <p><strong>初級（0-2年）</strong>: ジュニア機械学習エンジニア<br>
+                    <strong>中級（3-5年）</strong>: 機械学習エンジニア<br>
+                    <strong>上級（5年以上）</strong>: シニア機械学習エンジニア、MLテックリード</p>
+                    
+                    <h2>🎓 推奨学習パス</h2>
+                    <p><strong>Phase 1</strong>: Python基礎、機械学習理論、深層学習入門<br>
+                    <strong>Phase 2</strong>: ソフトウェア開発、クラウド基礎、データベース<br>
+                    <strong>Phase 3</strong>: MLパイプライン、コンテナ技術、API開発<br>
+                    <strong>Phase 4</strong>: 分散処理、リアルタイム処理、最適化</p>
+                `
+            },
+            'consultant': {
+                title: 'AIコンサルタント',
+                content: `
+                    <h2>🎯 職種概要</h2>
+                    <p>AIコンサルタントは、AI技術を活用したビジネス課題解決の専門家です。クライアントの業務課題を理解し、AI技術の可能性と制約を踏まえて最適なソリューションを提案・実装支援します。</p>
+                    
+                    <h2>📋 主な業務内容</h2>
+                    <h3>課題発見・要件定義</h3>
+                    <ul>
+                        <li><strong>ビジネス課題ヒアリング</strong>: クライアントの現状分析・課題整理</li>
+                        <li><strong>AI適用可能性評価</strong>: 技術的実現可能性とROIの評価</li>
+                        <li><strong>要件定義</strong>: 機能要件・非機能要件の詳細化</li>
+                        <li><strong>プロジェクト計画</strong>: スコープ、スケジュール、予算の策定</li>
+                    </ul>
+                    
+                    <h3>ソリューション設計</h3>
+                    <ul>
+                        <li><strong>AI戦略策定</strong>: 中長期的なAI活用ロードマップ</li>
+                        <li><strong>アーキテクチャ設計</strong>: システム全体の技術的設計</li>
+                        <li><strong>データ戦略</strong>: データ収集・整備・活用戦略</li>
+                        <li><strong>リスク分析</strong>: 技術的・ビジネス的リスクの特定と対策</li>
+                    </ul>
+                    
+                    <h2>🛠️ 必要なスキル</h2>
+                    <h3>ビジネススキル</h3>
+                    <ul>
+                        <li><strong>戦略思考</strong>: 事業戦略とAI技術の連携設計</li>
+                        <li><strong>問題解決</strong>: 複雑な課題の構造化・解決策立案</li>
+                        <li><strong>プレゼンテーション</strong>: 経営層への説得力のある提案</li>
+                        <li><strong>プロジェクト管理</strong>: 複数プロジェクトの並行推進</li>
+                    </ul>
+                    
+                    <h3>技術スキル</h3>
+                    <ul>
+                        <li><strong>AI技術理解</strong>: 機械学習・深層学習の原理と適用範囲</li>
+                        <li><strong>データ分析</strong>: 統計学、データ可視化、仮説検証</li>
+                        <li><strong>システム設計</strong>: アーキテクチャ、インフラ、セキュリティ</li>
+                        <li><strong>プログラミング</strong>: Python、SQL（基本レベル）</li>
+                    </ul>
+                    
+                    <h2>📈 キャリアパス</h2>
+                    <p><strong>初級（0-3年）</strong>: ジュニアAIコンサルタント<br>
+                    <strong>中級（3-6年）</strong>: AIコンサルタント<br>
+                    <strong>上級（6年以上）</strong>: シニアAIコンサルタント、AIコンサルティングマネージャー</p>
+                    
+                    <h2>🎓 推奨学習パス</h2>
+                    <p><strong>Phase 1</strong>: 戦略コンサルティング、プロジェクト管理、プレゼンテーション<br>
+                    <strong>Phase 2</strong>: 機械学習基礎、データ分析、AI事例研究<br>
+                    <strong>Phase 3</strong>: ドメイン知識、規制・コンプライアンス、競合分析<br>
+                    <strong>Phase 4</strong>: 実プロジェクト、ネットワーキング、継続学習</p>
+                `
+            },
+            'nlp-engineer': {
+                title: '自然言語処理エンジニア',
+                content: `
+                    <h2>🎯 職種概要</h2>
+                    <p>自然言語処理エンジニアは、テキスト・言語処理技術の専門家です。人間の言語をコンピュータが理解・生成できるシステムを開発し、チャットボット、翻訳、文書分析などの実用的なアプリケーションを構築します。</p>
+                    
+                    <h2>📋 主な業務内容</h2>
+                    <h3>テキスト処理・分析</h3>
+                    <ul>
+                        <li><strong>前処理パイプライン</strong>: トークン化、正規化、ノイズ除去</li>
+                        <li><strong>形態素解析</strong>: 品詞タグ付け、構文解析、依存関係解析</li>
+                        <li><strong>情報抽出</strong>: 固有表現認識、関係抽出、イベント抽出</li>
+                        <li><strong>感情分析</strong>: ポジネガ判定、感情分類、意図理解</li>
+                    </ul>
+                    
+                    <h3>言語モデル開発</h3>
+                    <ul>
+                        <li><strong>Transformer実装</strong>: BERT、GPT、T5等の最新モデル</li>
+                        <li><strong>ファインチューニング</strong>: タスク特化型モデルの構築</li>
+                        <li><strong>プロンプトエンジニアリング</strong>: 大規模言語モデルの効果的活用</li>
+                        <li><strong>マルチモーダル</strong>: テキスト×画像、音声の統合処理</li>
+                    </ul>
+                    
+                    <h2>🛠️ 必要なスキル</h2>
+                    <h3>技術スキル（NLP）</h3>
+                    <ul>
+                        <li><strong>深層学習</strong>: Transformer、RNN、CNN</li>
+                        <li><strong>NLPライブラリ</strong>: Hugging Face、spaCy、NLTK</li>
+                        <li><strong>言語学知識</strong>: 統語論、意味論、語用論</li>
+                        <li><strong>評価手法</strong>: BLEU、ROUGE、BERTScore</li>
+                    </ul>
+                    
+                    <h3>技術スキル（エンジニアリング）</h3>
+                    <ul>
+                        <li><strong>プログラミング</strong>: Python、PyTorch/TensorFlow</li>
+                        <li><strong>データ処理</strong>: pandas、NumPy、正規表現</li>
+                        <li><strong>クラウド</strong>: AWS、GCP（NLP専用サービス）</li>
+                        <li><strong>API開発</strong>: Flask、FastAPI、REST/GraphQL</li>
+                    </ul>
+                    
+                    <h2>📈 キャリアパス</h2>
+                    <p><strong>初級（0-2年）</strong>: ジュニアNLPエンジニア<br>
+                    <strong>中級（3-5年）</strong>: NLPエンジニア<br>
+                    <strong>上級（5年以上）</strong>: シニアNLPエンジニア、NLPテックリード</p>
+                    
+                    <h2>🎓 推奨学習パス</h2>
+                    <p><strong>Phase 1</strong>: Python基礎、機械学習、NLP入門<br>
+                    <strong>Phase 2</strong>: 深層学習基礎、Transformer理論、Hugging Face<br>
+                    <strong>Phase 3</strong>: タスク特化、ファインチューニング、評価・改善<br>
+                    <strong>Phase 4</strong>: 大規模言語モデル、マルチモーダル、本番運用</p>
+                `
+            },
+            'data-engineer': {
+                title: 'データエンジニア',
+                content: `
+                    <h2>🎯 職種概要</h2>
+                    <p>データエンジニアは、データ基盤の設計・構築・運用の専門家です。大規模データの収集、変換、保存、配信を効率的に行うシステムを構築し、データサイエンティストや機械学習エンジニアが活用できるデータ環境を提供します。</p>
+                    
+                    <h2>📋 主な業務内容</h2>
+                    <h3>データパイプライン構築</h3>
+                    <ul>
+                        <li><strong>ETL/ELT設計</strong>: データ抽出、変換、ロード処理</li>
+                        <li><strong>リアルタイム処理</strong>: ストリーミングデータの処理・配信</li>
+                        <li><strong>バッチ処理</strong>: 大容量データの定期処理</li>
+                        <li><strong>データ品質管理</strong>: バリデーション、クレンジング、監視</li>
+                    </ul>
+                    
+                    <h3>データ基盤設計・運用</h3>
+                    <ul>
+                        <li><strong>データレイク構築</strong>: 構造化・非構造化データの統合管理</li>
+                        <li><strong>データウェアハウス</strong>: 分析用データマートの設計・最適化</li>
+                        <li><strong>データカタログ</strong>: メタデータ管理、データ系譜追跡</li>
+                        <li><strong>セキュリティ</strong>: アクセス制御、暗号化、監査ログ</li>
+                    </ul>
+                    
+                    <h2>🛠️ 必要なスキル</h2>
+                    <h3>技術スキル（データ処理）</h3>
+                    <ul>
+                        <li><strong>SQL</strong>: 高度なクエリ最適化、ウィンドウ関数</li>
+                        <li><strong>Python/Scala</strong>: データ処理スクリプト、API開発</li>
+                        <li><strong>Apache Spark</strong>: 大規模分散データ処理</li>
+                        <li><strong>Apache Kafka</strong>: リアルタイムストリーミング</li>
+                    </ul>
+                    
+                    <h3>技術スキル（インフラ）</h3>
+                    <ul>
+                        <li><strong>クラウド</strong>: AWS、GCP、Azure（データサービス）</li>
+                        <li><strong>コンテナ</strong>: Docker、Kubernetes</li>
+                        <li><strong>IaC</strong>: Terraform、CloudFormation</li>
+                        <li><strong>CI/CD</strong>: Jenkins、GitHub Actions、データパイプライン自動化</li>
+                    </ul>
+                    
+                    <h2>📈 キャリアパス</h2>
+                    <p><strong>初級（0-2年）</strong>: ジュニアデータエンジニア<br>
+                    <strong>中級（3-5年）</strong>: データエンジニア<br>
+                    <strong>上級（5年以上）</strong>: シニアデータエンジニア、データプラットフォームエンジニア</p>
+                    
+                    <h2>🎓 推奨学習パス</h2>
+                    <p><strong>Phase 1</strong>: SQL基礎、Python基礎、Linux/Shell<br>
+                    <strong>Phase 2</strong>: Apache Spark、ストリーミング、データベース<br>
+                    <strong>Phase 3</strong>: AWS/GCP、Docker/Kubernetes、IaC<br>
+                    <strong>Phase 4</strong>: データレイク、MLOps、リアルタイム分析</p>
+                `
+            },
+            'product-manager': {
+                title: 'AIプロダクトマネージャー',
+                content: `
+                    <h2>🎯 職種概要</h2>
+                    <p>AIプロダクトマネージャーは、AI技術を活用したプロダクトの企画・開発・運用を統括する責任者です。ビジネス価値とユーザー体験を最大化するAIプロダクトを設計し、技術チームと協力して市場投入から成長まで全体をリードします。</p>
+                    
+                    <h2>📋 主な業務内容</h2>
+                    <h3>プロダクト戦略・企画</h3>
+                    <ul>
+                        <li><strong>市場調査・分析</strong>: 競合分析、ユーザーニーズ調査、市場機会特定</li>
+                        <li><strong>プロダクトビジョン</strong>: 長期的なプロダクト方向性の策定</li>
+                        <li><strong>ロードマップ作成</strong>: 機能開発の優先順位・スケジュール計画</li>
+                        <li><strong>KPI設計</strong>: 成功指標の定義・測定・改善</li>
+                    </ul>
+                    
+                    <h3>要件定義・仕様策定</h3>
+                    <ul>
+                        <li><strong>ユーザーストーリー</strong>: ペルソナ設計、ユーザージャーニー設計</li>
+                        <li><strong>機能仕様</strong>: AI機能の詳細要件、UI/UX設計</li>
+                        <li><strong>技術要件</strong>: 性能要件、品質要件、制約条件の整理</li>
+                        <li><strong>データ要件</strong>: 学習データ、推論データの要件定義</li>
+                    </ul>
+                    
+                    <h2>🛠️ 必要なスキル</h2>
+                    <h3>ビジネススキル</h3>
+                    <ul>
+                        <li><strong>戦略思考</strong>: 市場分析、競合戦略、事業モデル設計</li>
+                        <li><strong>プロダクト企画</strong>: ユーザー中心設計、機能優先順位付け</li>
+                        <li><strong>プロジェクト管理</strong>: アジャイル開発、スクラム、リーン手法</li>
+                        <li><strong>データ分析</strong>: KPI設計、A/Bテスト、ユーザー行動分析</li>
+                    </ul>
+                    
+                    <h3>AI技術理解</h3>
+                    <ul>
+                        <li><strong>機械学習基礎</strong>: アルゴリズム理解、適用可能性評価</li>
+                        <li><strong>AI倫理・公平性</strong>: バイアス、プライバシー、説明可能性</li>
+                        <li><strong>データ要件</strong>: データ品質、アノテーション、学習データ設計</li>
+                        <li><strong>システム設計</strong>: API設計、スケーラビリティ、パフォーマンス</li>
+                    </ul>
+                    
+                    <h2>📈 キャリアパス</h2>
+                    <p><strong>初級（0-3年）</strong>: アソシエイトプロダクトマネージャー<br>
+                    <strong>中級（3-6年）</strong>: プロダクトマネージャー<br>
+                    <strong>上級（6年以上）</strong>: シニアプロダクトマネージャー、プロダクトディレクター</p>
+                    
+                    <h2>🎓 推奨学習パス</h2>
+                    <p><strong>Phase 1</strong>: プロダクト管理、ユーザー中心設計、データ分析<br>
+                    <strong>Phase 2</strong>: 機械学習基礎、AI倫理、AIプロダクト事例<br>
+                    <strong>Phase 3</strong>: アジャイル開発、A/Bテスト、プレゼンテーション<br>
+                    <strong>Phase 4</strong>: 業界専門性、リーダーシップ、事業開発</p>
+                `
+            },
+            'cv-engineer': {
+                title: 'コンピュータビジョンエンジニア',
+                content: `
+                    <h2>🎯 職種概要</h2>
+                    <p>コンピュータビジョンエンジニアは、画像・映像処理技術の専門家です。カメラやセンサーから得られる視覚情報をコンピュータが理解・処理できるシステムを開発し、自動運転、医療画像診断、製造業の品質管理などの実用的なアプリケーションを構築します。</p>
+                    
+                    <h2>📋 主な業務内容</h2>
+                    <h3>画像処理・解析</h3>
+                    <ul>
+                        <li><strong>前処理</strong>: ノイズ除去、正規化、データ拡張</li>
+                        <li><strong>特徴抽出</strong>: エッジ検出、テクスチャ分析、キーポイント抽出</li>
+                        <li><strong>物体検出</strong>: YOLO、R-CNN等による物体認識・位置特定</li>
+                        <li><strong>セグメンテーション</strong>: セマンティック・インスタンスセグメンテーション</li>
+                    </ul>
+                    
+                    <h3>深層学習モデル開発</h3>
+                    <ul>
+                        <li><strong>CNN設計</strong>: ResNet、EfficientNet、Vision Transformer</li>
+                        <li><strong>モデル学習</strong>: データセット構築、学習パラメータ調整</li>
+                        <li><strong>転移学習</strong>: 事前学習モデルの活用・ファインチューニング</li>
+                        <li><strong>モデル最適化</strong>: 量子化、プルーニング、知識蒸留</li>
+                    </ul>
+                    
+                    <h2>🛠️ 必要なスキル</h2>
+                    <h3>技術スキル（コンピュータビジョン）</h3>
+                    <ul>
+                        <li><strong>画像処理</strong>: OpenCV、PIL、scikit-image</li>
+                        <li><strong>深層学習</strong>: PyTorch、TensorFlow、Keras</li>
+                        <li><strong>数学</strong>: 線形代数、統計学、信号処理</li>
+                        <li><strong>3D処理</strong>: PCL、Open3D、メッシュ処理</li>
+                    </ul>
+                    
+                    <h3>技術スキル（エンジニアリング）</h3>
+                    <ul>
+                        <li><strong>プログラミング</strong>: Python、C++、CUDA</li>
+                        <li><strong>GPU計算</strong>: CUDA、OpenCL、TensorRT</li>
+                        <li><strong>クラウド</strong>: AWS、GCP（画像処理サービス）</li>
+                        <li><strong>エッジデバイス</strong>: Raspberry Pi、Jetson、モバイル最適化</li>
+                    </ul>
+                    
+                    <h2>📈 キャリアパス</h2>
+                    <p><strong>初級（0-2年）</strong>: ジュニアコンピュータビジョンエンジニア<br>
+                    <strong>中級（3-5年）</strong>: コンピュータビジョンエンジニア<br>
+                    <strong>上級（5年以上）</strong>: シニアコンピュータビジョンエンジニア、コンピュータビジョンアーキテクト</p>
+                    
+                    <h2>🎓 推奨学習パス</h2>
+                    <p><strong>Phase 1</strong>: Python基礎、OpenCV、機械学習<br>
+                    <strong>Phase 2</strong>: 深層学習基礎、CNN理論、画像分類<br>
+                    <strong>Phase 3</strong>: 物体検出、セグメンテーション、画像生成<br>
+                    <strong>Phase 4</strong>: リアルタイム処理、エッジデプロイ、3D処理</p>
+                `
+            },
+            'research': {
+                title: 'リサーチサイエンティスト',
+                content: `
+                    <h2>🎯 職種概要</h2>
+                    <p>リサーチサイエンティストは、AI・機械学習分野の研究開発を専門とする研究者です。新しいアルゴリズムや手法の開発、既存技術の改良、理論的基盤の構築を行い、学術論文の執筆や国際会議での発表を通じて科学的知見を社会に還元します。</p>
+                    
+                    <h2>📋 主な業務内容</h2>
+                    <h3>研究企画・推進</h3>
+                    <ul>
+                        <li><strong>研究テーマ設定</strong>: 新規性・実用性のある研究課題の発見</li>
+                        <li><strong>文献調査</strong>: 最新研究動向の把握・分析</li>
+                        <li><strong>仮説構築</strong>: 理論的仮説の立案・検証計画策定</li>
+                        <li><strong>実験設計</strong>: 統計的に有意な実験の設計・実施</li>
+                    </ul>
+                    
+                    <h3>アルゴリズム開発</h3>
+                    <ul>
+                        <li><strong>新手法開発</strong>: 既存手法の限界を超える新アルゴリズム</li>
+                        <li><strong>理論解析</strong>: 数学的な性能保証・収束性証明</li>
+                        <li><strong>実装・検証</strong>: プロトタイプ実装・性能評価</li>
+                        <li><strong>ベンチマーク</strong>: 標準データセットでの性能比較</li>
+                    </ul>
+                    
+                    <h2>🛠️ 必要なスキル</h2>
+                    <h3>研究スキル</h3>
+                    <ul>
+                        <li><strong>数学・統計</strong>: 線形代数、確率論、最適化理論、統計的推論</li>
+                        <li><strong>機械学習理論</strong>: 学習理論、情報理論、計算複雑性</li>
+                        <li><strong>実験設計</strong>: 統計的仮説検定、A/Bテスト、因果推論</li>
+                        <li><strong>批判的思考</strong>: 既存研究の限界分析・改善点発見</li>
+                    </ul>
+                    
+                    <h3>技術スキル</h3>
+                    <ul>
+                        <li><strong>プログラミング</strong>: Python、R、C++、数値計算</li>
+                        <li><strong>深層学習</strong>: PyTorch、TensorFlow、JAX</li>
+                        <li><strong>科学計算</strong>: NumPy、SciPy、MATLAB</li>
+                        <li><strong>可視化</strong>: Matplotlib、Plotly、TikZ</li>
+                    </ul>
+                    
+                    <h2>📈 キャリアパス</h2>
+                    <p><strong>初級（0-3年）</strong>: ポスドク研究員<br>
+                    <strong>中級（3-7年）</strong>: リサーチサイエンティスト<br>
+                    <strong>上級（7年以上）</strong>: シニアリサーチサイエンティスト、リサーチディレクター</p>
+                    
+                    <h2>🎓 推奨学習パス</h2>
+                    <p><strong>Phase 1</strong>: 線形代数、確率・統計、最適化<br>
+                    <strong>Phase 2</strong>: 学習理論、情報理論、深層学習理論<br>
+                    <strong>Phase 3</strong>: 論文読解、実装・実験、論文執筆<br>
+                    <strong>Phase 4</strong>: 専門領域、学際研究、応用研究</p>
+                `
+            }
+        };
+
         // キャリアパス定義
         const careerPaths = {
             'data-science': {
@@ -546,12 +1124,63 @@
             document.getElementById('results').classList.remove('show');
         }
 
+        // モーダル機能
+        function showCareerDetail(careerId) {
+            const career = careerDetails[careerId];
+            if (!career) return;
+            
+            const modal = document.getElementById('career-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalContent = document.getElementById('modal-content');
+            
+            modalTitle.textContent = career.title;
+            modalContent.innerHTML = career.content;
+            modal.style.display = 'block';
+        }
+
         // イベントリスナーの設定
         document.addEventListener('DOMContentLoaded', function() {
             // すべてのチェックボックスと入力フィールドにイベントリスナーを追加
             document.querySelectorAll('input[type="checkbox"], input[type="number"]').forEach(input => {
                 input.addEventListener('change', updateResults);
                 input.addEventListener('input', updateResults);
+            });
+            
+            // モーダル閉じる処理
+            const modal = document.getElementById('career-modal');
+            const closeBtn = document.querySelector('.close');
+            
+            closeBtn.onclick = function() {
+                modal.style.display = 'none';
+            }
+            
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
+            
+            // 詳細リンクのクリック処理
+            document.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A' && e.target.href.includes('careers/')) {
+                    e.preventDefault();
+                    const href = e.target.href;
+                    
+                    // ファイル名からキャリアIDを抽出
+                    let careerId = '';
+                    if (href.includes('data-scientist.md')) careerId = 'data-science';
+                    else if (href.includes('machine-learning-engineer.md')) careerId = 'ml-engineer';
+                    else if (href.includes('ai-consultant.md')) careerId = 'consultant';
+                    else if (href.includes('nlp-engineer.md')) careerId = 'nlp-engineer';
+                    else if (href.includes('data-engineer.md')) careerId = 'data-engineer';
+                    else if (href.includes('ai-product-manager.md')) careerId = 'product-manager';
+                    else if (href.includes('computer-vision-engineer.md')) careerId = 'cv-engineer';
+                    else if (href.includes('research-scientist.md')) careerId = 'research';
+                    
+                    if (careerId) {
+                        showCareerDetail(careerId);
+                    }
+                }
             });
         });
     </script>
