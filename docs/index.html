@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI/データサイエンス研修プログラム</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .tool-card {
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+        
+        .tool-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .tool-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .tool-description {
+            margin-bottom: 25px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        .tool-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .tool-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .features {
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .features h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #feca57;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 AI/データサイエンス研修プログラム</h1>
+        <p class="subtitle">あなたのキャリアパスを見つけて、AIエンジニアとしての道筋を描こう</p>
+        
+        <div class="tools-grid">
+            <div class="tool-card">
+                <span class="tool-icon">📊</span>
+                <div class="tool-title">インタラクティブ診断ツール</div>
+                <div class="tool-description">
+                    チェックボックスを選択するだけで、あなたに最適なキャリアパスを自動計算！
+                    リアルタイムで結果が更新される便利なツールです。
+                </div>
+                <a href="career_path_interactive.html" class="tool-button">🚀 診断を開始</a>
+            </div>
+            
+            <div class="tool-card">
+                <span class="tool-icon">📋</span>
+                <div class="tool-title">手動診断ツール</div>
+                <div class="tool-description">
+                    じっくりと考えながら診断したい方向け。
+                    詳細なチェックリストで段階的にキャリアパスを選択できます。
+                </div>
+                <a href="career_path_selector.md" class="tool-button">📝 手動診断</a>
+            </div>
+            
+            <div class="tool-card">
+                <span class="tool-icon">🚀</span>
+                <div class="tool-title">キャリアパス詳細ガイド</div>
+                <div class="tool-description">
+                    12の主要キャリアパスの詳細情報。
+                    各職種の役割、必要スキル、年収、学習パスを詳しく解説。
+                </div>
+                <a href="ai_career_paths_guide.md" class="tool-button">📚 詳細を見る</a>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>✨ 特徴</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>🎯 12のキャリアパス</h3>
+                    <p>技術系・ビジネス系・専門特化系の包括的な選択肢</p>
+                </div>
+                <div class="feature-item">
+                    <h3>📊 リアルタイム診断</h3>
+                    <p>選択と同時に適合度をパーセンテージで表示</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🎓 学習パス連携</h3>
+                    <p>診断結果から直接学習コースへ案内</p>
+                </div>
+                <div class="feature-item">
+                    <h3>💼 実践的内容</h3>
+                    <p>実際の案件・業務内容に基づいた診断</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>💡 <strong>学習のコツ</strong>: まずはキャリア診断で方向性を決めてから、体系的に学習を進めましょう！</p>
+            <p>🔗 <a href="../README.md" style="color: #feca57;">メインページに戻る</a></p>
+        </div>
+    </div>
+</body>
+</html> 
