@@ -412,39 +412,39 @@
                 title: 'AI研修・教育エンジニア',
                 content: `
                     <h2>🎯 どんなお仕事？</h2>
-                    <p>AI研修・教育エンジニアは、<strong>AI技術を他の人に教える"AIの先生"</strong>です。企業研修、大学講義、オンライン教育などを通じて、AI技術を分かりやすく伝え、次世代のAI人材を育成します。</p>
+                    <p>AI研修・教育エンジニアは、<strong>AI技術を教える"AIの先生"</strong>です。企業や学校でAI技術の研修を企画・実施し、AI人材を育成します。技術的な内容を分かりやすく説明し、実践的なスキルを身につけてもらうことが使命です。</p>
                     
                     <h2>✨ やりがい・魅力</h2>
                     <ul>
-                        <li><strong>人の成長を直接支援</strong> - 教えた人がAIエンジニアとして活躍する姿を見られる</li>
-                        <li><strong>社会への貢献度が高い</strong> - AI人材不足の解決に直接貢献できる</li>
-                        <li><strong>自分も成長し続けられる</strong> - 教えるために最新技術を学び続ける必要がある</li>
-                        <li><strong>多様な働き方が可能</strong> - 企業研修、大学講師、オンライン教育など様々な形で活躍</li>
+                        <li><strong>人材育成に貢献</strong> - 受講者がAIスキルを身につけて成長する姿を見られる</li>
+                        <li><strong>技術と教育の両方を学べる</strong> - AI技術と教育手法の両方を深く理解できる</li>
+                        <li><strong>様々な業界と関われる</strong> - 製造業、金融、医療など多様な業界の人材育成に関与</li>
+                        <li><strong>教育コンテンツを創造</strong> - オリジナルの教材やカリキュラムを作成できる</li>
                     </ul>
                     
                     <h2>📚 具体的な案件例</h2>
                     <ul>
-                        <li><strong>企業研修</strong>: 「製造業向けAI導入研修」で工場エンジニア50名にAI活用方法を指導</li>
-                        <li><strong>大学講義</strong>: 「機械学習入門」講座で学生200名に実践的なAIスキルを教育</li>
-                        <li><strong>オンライン教育</strong>: 「Python×AI」のオンライン講座を開発し、1000名以上が受講</li>
-                        <li><strong>管理職研修</strong>: 「AI時代のマネジメント」研修で経営層にAI戦略を指導</li>
-                        <li><strong>資格対策</strong>: 「G検定・E資格対策講座」でAI資格取得をサポート</li>
+                        <li><strong>企業内研修</strong>: 「製造業向けAI基礎研修」で画像認識の実装方法を指導</li>
+                        <li><strong>大学・専門学校</strong>: 「AIプログラミング入門」の授業を担当</li>
+                        <li><strong>オンライン講座</strong>: UdemyやCourseraでAIコースの動画コンテンツを作成</li>
+                        <li><strong>ワークショップ</strong>: 「AIハッカソン」で参加者のプロジェクトをサポート</li>
+                        <li><strong>資格試験対策</strong>: AI資格取得のための対策講座を実施</li>
                     </ul>
                     
                     <h2>👥 こんな人に向いています</h2>
                     <ul>
-                        <li><strong>人に教えることが好き</strong> - 複雑な技術を分かりやすく説明することに喜びを感じる</li>
-                        <li><strong>コミュニケーション能力が高い</strong> - 様々なレベルの学習者と効果的にやり取りできる</li>
-                        <li><strong>学習意欲が高い</strong> - 教えるために自分も常に最新技術を学び続けられる</li>
-                        <li><strong>忍耐強い</strong> - 理解に時間がかかる学習者も根気よく指導できる</li>
-                        <li><strong>カリキュラム設計が得意</strong> - 効果的な学習プログラムを体系的に組み立てられる</li>
+                        <li><strong>人に教えるのが好き</strong> - 知識を共有して相手の成長をサポートするのが楽しい</li>
+                        <li><strong>コミュニケーションが得意</strong> - 複雑な技術を分かりやすく説明できる</li>
+                        <li><strong>忍耐強さがある</strong> - 理解が遅い人にも根気強く教えられる</li>
+                        <li><strong>教材作成が好き</strong> - スライドや資料を作るのが得意</li>
+                        <li><strong>AI技術に詳しい</strong> - 実践的なAIスキルを持っている</li>
                     </ul>
                     
                     <h2>🚀 キャリアの魅力</h2>
-                    <p><strong>AI人材不足が深刻化する中、教育の専門家として高く評価</strong>されます。将来的には教育ディレクター、研修コンサルタント、大学教授、教育系スタートアップ創業者など、教育分野のリーダーとして活躍できます。</p>
+                    <p><strong>AI人材不足の今、最も需要が高い</strong>職種の一つです。企業のDX推進やAI導入を人材面から支える重要な役割で、将来的には教育ディレクターやAI研修コンサルタントとして独立することも可能です。</p>
                     
                     <h2>💡 まずは何から？</h2>
-                    <p>まずは<strong>自分自身がAI技術を習得</strong>することが最重要です。その後、<strong>ブログや動画</strong>で技術解説を始めて、分かりやすく伝える練習をしましょう。<strong>教育学や学習理論</strong>も学ぶと効果的です。</p>
+                    <p>まずは<strong>AI技術の基礎をしっかり身につける</strong>ことから始めましょう。その後、<strong>プレゼンテーション</strong>や<strong>教材作成</strong>のスキルを磨き、小さな勉強会から始めて徐々に規模を大きくしていくのがおすすめです。</p>
                     
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
@@ -452,6 +452,312 @@
                            style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
                            target="_blank">
                             🔗 AI研修・教育エンジニアの詳細キャリア情報を見る →
+                        </a>
+                        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+                            推奨資格、具体的な学習パス、キャリア展開例などの詳細情報
+                        </p>
+                    </div>
+                `
+            },
+            'mlops-engineer': {
+                title: 'MLOpsエンジニア',
+                content: `
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>MLOpsエンジニアは、<strong>機械学習システムの運用・自動化を担当する"AIの運用エキスパート"</strong>です。データサイエンティストや機械学習エンジニアが作ったAIモデルを、実際のサービスで安定して動かし続けるための基盤を構築・運用します。</p>
+                    
+                    <h2>✨ やりがい・魅力</h2>
+                    <ul>
+                        <li><strong>AIシステムの安定運用</strong> - 数万人のユーザーが使うAIサービスを24時間365日安定稼働させる</li>
+                        <li><strong>自動化による効率化</strong> - 手作業を自動化して、AIモデルの更新を迅速に行える</li>
+                        <li><strong>最新技術を活用</strong> - Kubernetes、Docker、クラウドサービスなど最新の技術を駆使</li>
+                        <li><strong>技術とビジネスの橋渡し</strong> - 開発チームと運用チームの間で重要な役割を果たす</li>
+                    </ul>
+                    
+                    <h2>⚙️ 具体的な案件例</h2>
+                    <ul>
+                        <li><strong>レコメンドシステム</strong>: 「Netflixのような推薦機能を24時間安定稼働させる」基盤を構築</li>
+                        <li><strong>画像認識API</strong>: 「スマホアプリから送られてくる画像を自動で分析する」システムを運用</li>
+                        <li><strong>異常検知システム</strong>: 「工場の機械の故障を予測するAI」をリアルタイムで監視・運用</li>
+                        <li><strong>チャットボット</strong>: 「顧客対応の自動化AI」の性能監視と自動更新システムを構築</li>
+                        <li><strong>予測モデル</strong>: 「売上予測AI」の定期的な再学習とデプロイを自動化</li>
+                    </ul>
+                    
+                    <h2>👥 こんな人に向いています</h2>
+                    <ul>
+                        <li><strong>システム運用が好き</strong> - サーバーやアプリケーションの安定稼働に責任を持てる</li>
+                        <li><strong>自動化に興味がある</strong> - 手作業をプログラムで自動化するのが楽しい</li>
+                        <li><strong>問題解決が得意</strong> - システム障害を素早く特定して解決できる</li>
+                        <li><strong>新しい技術を学ぶのが好き</strong> - クラウドやコンテナ技術に興味がある</li>
+                        <li><strong>細かい作業が得意</strong> - 設定ファイルやログの確認を丁寧に行える</li>
+                    </ul>
+                    
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>AI分野で最も需要が高く、将来性がある</strong>職種です。AIの実用化が進むにつれて、MLOpsエンジニアの重要性はますます高まっています。将来的にはMLプラットフォームアーキテクトやDevOpsリードとして、より大きなシステムを設計する立場にステップアップできます。</p>
+                    
+                    <h2>💡 まずは何から？</h2>
+                    <p><strong>Linux</strong>や<strong>Python</strong>の基礎から始め、<strong>Docker</strong>や<strong>Kubernetes</strong>を学びましょう。<strong>AWS</strong>や<strong>GCP</strong>などのクラウドサービスも重要です。まずは小さなAIアプリをクラウドで動かすことから始めて、徐々に複雑なシステムを扱えるようになります。</p>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
+                        <h3>📚 さらに詳しい情報</h3>
+                        <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/mlops-engineer.md" 
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
+                           target="_blank">
+                            🔗 MLOpsエンジニアの詳細キャリア情報を見る →
+                        </a>
+                        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+                            推奨資格、具体的な学習パス、キャリア展開例などの詳細情報
+                        </p>
+                    </div>
+                `
+            },
+            'cv-engineer': {
+                title: 'コンピュータビジョンエンジニア',
+                content: `
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>コンピュータビジョンエンジニアは、<strong>画像や映像をAIで分析・理解する技術の専門家</strong>です。スマホの顔認証、自動運転車の障害物検知、医療画像の診断支援など、画像を使った様々なAIシステムを開発します。</p>
+                    
+                    <h2>✨ やりがい・魅力</h2>
+                    <ul>
+                        <li><strong>視覚的な成果が分かりやすい</strong> - 作ったAIが画像を正しく認識する様子を直接確認できる</li>
+                        <li><strong>幅広い応用分野</strong> - 医療、自動車、製造業、エンターテイメントなど様々な業界で活躍</li>
+                        <li><strong>最新技術を実装</strong> - ディープラーニングの最新手法を実際のサービスで使える</li>
+                        <li><strong>社会貢献度が高い</strong> - 医療診断や自動運転など、人命に関わる重要な技術を開発</li>
+                    </ul>
+                    
+                    <h2>📸 具体的な案件例</h2>
+                    <ul>
+                        <li><strong>顔認証システム</strong>: スマホのロック解除や空港のセキュリティチェックを自動化</li>
+                        <li><strong>自動運転</strong>: 車載カメラで歩行者や信号を認識し、安全な運転を支援</li>
+                        <li><strong>医療画像診断</strong>: レントゲン写真から病気を自動検出し、医師の診断をサポート</li>
+                        <li><strong>製造業の品質検査</strong>: 工場のラインで不良品を自動検出</li>
+                        <li><strong>AR/VRアプリ</strong>: スマホカメラで現実世界を認識し、デジタル情報を重ね表示</li>
+                    </ul>
+                    
+                    <h2>👥 こんな人に向いています</h2>
+                    <ul>
+                        <li><strong>画像や映像に興味がある</strong> - 写真や動画を扱うのが好き</li>
+                        <li><strong>数学が得意</strong> - 特に線形代数や微積分の理解が重要</li>
+                        <li><strong>細かい作業が得意</strong> - 画像の前処理やパラメータ調整を丁寧に行える</li>
+                        <li><strong>新しい技術への学習意欲が高い</strong> - ディープラーニングの最新手法をキャッチアップできる</li>
+                        <li><strong>問題解決が好き</strong> - 「なぜ画像が正しく認識されないか？」を論理的に分析できる</li>
+                    </ul>
+                    
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>AI分野の中でも特に需要が高く、高収入</strong>な職種です。自動運転や医療AIなど、社会的インパクトの大きな分野で活躍でき、将来的にはCVテックリードや自動運転エンジニアとして、より専門的な分野に特化することも可能です。</p>
+                    
+                    <h2>💡 まずは何から？</h2>
+                    <p><strong>Python</strong>と<strong>OpenCV</strong>という画像処理ライブラリから始めましょう。まずは簡単な画像フィルタリングや顔検出を実装し、徐々にディープラーニングを使った高度な画像認識に挑戦していきます。<strong>数学の基礎</strong>（特に線形代数）も並行して学ぶと良いでしょう。</p>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
+                        <h3>📚 さらに詳しい情報</h3>
+                        <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/computer-vision-engineer.md" 
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
+                           target="_blank">
+                            🔗 コンピュータビジョンエンジニアの詳細キャリア情報を見る →
+                        </a>
+                        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+                            推奨資格、具体的な学習パス、キャリア展開例などの詳細情報
+                        </p>
+                    </div>
+                `
+            },
+            'nlp-engineer': {
+                title: '自然言語処理エンジニア',
+                content: `
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>自然言語処理エンジニアは、<strong>テキストや音声をAIで理解・生成する技術の専門家</strong>です。ChatGPTのような対話AI、翻訳アプリ、音声アシスタント、文章の要約システムなど、言語を使った様々なAIシステムを開発します。</p>
+                    
+                    <h2>✨ やりがい・魅力</h2>
+                    <ul>
+                        <li><strong>言語の不思議を解明</strong> - 人間の言葉をコンピュータが理解する仕組みを作れる</li>
+                        <li><strong>実用的なAIを開発</strong> - 多くの人が日常的に使う翻訳や検索機能を作れる</li>
+                        <li><strong>多言語対応が可能</strong> - 日本語だけでなく、英語、中国語など様々な言語を扱える</li>
+                        <li><strong>創造的な仕事</strong> - 新しい表現方法や対話パターンを設計できる</li>
+                    </ul>
+                    
+                    <h2>💬 具体的な案件例</h2>
+                    <ul>
+                        <li><strong>チャットボット</strong>: 企業の顧客対応を自動化する対話AIを開発</li>
+                        <li><strong>翻訳アプリ</strong>: リアルタイムで音声を翻訳するアプリを構築</li>
+                        <li><strong>音声アシスタント</strong>: 「OK Google」のような音声コマンドシステムを開発</li>
+                        <li><strong>文章要約</strong>: 長い記事を自動で要約するシステムを作成</li>
+                        <li><strong>感情分析</strong>: SNSの投稿から感情を分析し、ブランド評価を測定</li>
+                    </ul>
+                    
+                    <h2>👥 こんな人に向いています</h2>
+                    <ul>
+                        <li><strong>言語に興味がある</strong> - 日本語や英語の文法、表現方法に詳しい</li>
+                        <li><strong>コミュニケーションが好き</strong> - 人との会話や文章を書くのが得意</li>
+                        <li><strong>論理的思考が得意</strong> - 複雑な文章の構造を分析できる</li>
+                        <li><strong>新しい技術への学習意欲が高い</strong> - 最新の言語モデルをキャッチアップできる</li>
+                        <li><strong>細かい作業が得意</strong> - テキストデータの前処理やラベリングを丁寧に行える</li>
+                    </ul>
+                    
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>AI分野で最も急速に発展している</strong>分野の一つです。ChatGPTの登場により、自然言語処理の重要性はますます高まっています。将来的にはNLPテックリードや対話AI責任者として、より大きな言語AIシステムを設計する立場にステップアップできます。</p>
+                    
+                    <h2>💡 まずは何から？</h2>
+                    <p><strong>Python</strong>と<strong>NLTK</strong>や<strong>spaCy</strong>などの自然言語処理ライブラリから始めましょう。まずは簡単なテキスト分析（単語の出現頻度、感情分析など）を実装し、徐々にTransformerモデルを使った高度な言語処理に挑戦していきます。<strong>英語の基礎力</strong>も重要です。</p>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
+                        <h3>📚 さらに詳しい情報</h3>
+                        <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/nlp-engineer.md" 
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
+                           target="_blank">
+                            🔗 自然言語処理エンジニアの詳細キャリア情報を見る →
+                        </a>
+                        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+                            推奨資格、具体的な学習パス、キャリア展開例などの詳細情報
+                        </p>
+                    </div>
+                `
+            },
+            'robotics-engineer': {
+                title: 'ロボティクスエンジニア',
+                content: `
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>ロボティクスエンジニアは、<strong>ロボットにAIを組み込んで自律的に動作させる技術の専門家</strong>です。工場の産業ロボット、掃除ロボット、ドローン、自動運転車など、様々なロボットシステムの制御とAI統合を担当します。</p>
+                    
+                    <h2>✨ やりがい・魅力</h2>
+                    <ul>
+                        <li><strong>物理的な成果を確認できる</strong> - 作ったAIが実際にロボットを動かす様子を見られる</li>
+                        <li><strong>多分野の技術を統合</strong> - 機械工学、電気工学、AI、制御工学を組み合わせる</li>
+                        <li><strong>社会に直接貢献</strong> - 危険な作業の自動化や、人々の生活を便利にする</li>
+                        <li><strong>最先端技術を実装</strong> - 最新のAI技術を実際のロボットで使える</li>
+                    </ul>
+                    
+                    <h2>🤖 具体的な案件例</h2>
+                    <ul>
+                        <li><strong>産業ロボット</strong>: 工場の組み立て作業を自動化するロボットの制御システム</li>
+                        <li><strong>掃除ロボット</strong>: 部屋の地図を作成して効率的に掃除するロボット</li>
+                        <li><strong>ドローン</strong>: 自動で飛行して撮影や配送を行うドローンシステム</li>
+                        <li><strong>自動運転車</strong>: センサー情報を統合して安全に運転する車両制御</li>
+                        <li><strong>医療ロボット</strong>: 手術を支援する精密なロボットアームの制御</li>
+                    </ul>
+                    
+                    <h2>👥 こんな人に向いています</h2>
+                    <ul>
+                        <li><strong>機械やロボットに興味がある</strong> - ものが動く仕組みに詳しい</li>
+                        <li><strong>数学・物理が得意</strong> - 特に力学や制御理論の理解が重要</li>
+                        <li><strong>実装力がある</strong> - 理論を実際のシステムに落とし込める</li>
+                        <li><strong>問題解決が好き</strong> - ロボットの動作不良を論理的に分析できる</li>
+                        <li><strong>チームワークが得意</strong> - 機械・電気・ソフトウェアエンジニアと協力できる</li>
+                    </ul>
+                    
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>AIとロボットの融合分野で最も将来性がある</strong>職種です。製造業の自動化やサービスロボットの普及により、需要はますます高まっています。将来的にはロボティクスリードや自律システム設計者として、より高度なロボットシステムを設計する立場にステップアップできます。</p>
+                    
+                    <h2>💡 まずは何から？</h2>
+                    <p><strong>Python</strong>と<strong>ROS（Robot Operating System）</strong>から始めましょう。まずはシミュレーション環境でロボットの制御を学び、徐々に実際のロボットハードウェアを扱えるようになります。<strong>制御理論</strong>や<strong>機械学習</strong>の基礎も並行して学ぶと良いでしょう。</p>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
+                        <h3>📚 さらに詳しい情報</h3>
+                        <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/robotics-engineer.md" 
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
+                           target="_blank">
+                            🔗 ロボティクスエンジニアの詳細キャリア情報を見る →
+                        </a>
+                        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+                            推奨資格、具体的な学習パス、キャリア展開例などの詳細情報
+                        </p>
+                    </div>
+                `
+            },
+            'ai-development-director': {
+                title: 'AI開発ディレクター',
+                content: `
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>AI開発ディレクターは、<strong>AI開発部門全体を統括し、複数のAIプロジェクトを管理する"AI開発の責任者"</strong>です。技術戦略の策定、チーム編成、予算管理、ステークホルダーとの調整など、AI開発の全体的な成功を担います。</p>
+                    
+                    <h2>✨ やりがい・魅力</h2>
+                    <ul>
+                        <li><strong>組織全体のAI戦略を左右</strong> - 企業のAI導入成功を技術面から支える重要な役割</li>
+                        <li><strong>多様なチームを統括</strong> - データサイエンティスト、エンジニア、プロダクトマネージャーを率いる</li>
+                        <li><strong>技術とビジネスの両方を理解</strong> - 技術的な可能性とビジネス価値を結びつける</li>
+                        <li><strong>高い意思決定権限</strong> - 技術選択やリソース配分の重要な判断を下せる</li>
+                    </ul>
+                    
+                    <h2>🎬 具体的な案件例</h2>
+                    <ul>
+                        <li><strong>企業全体のAI戦略策定</strong>: 「今後3年間のAI導入ロードマップ」を策定・実行</li>
+                        <li><strong>複数プロジェクトの統括</strong>: 画像認識、自然言語処理、推薦システムの3つのプロジェクトを並行管理</li>
+                        <li><strong>チーム編成・人材育成</strong>: 20名のAIエンジニアチームの編成とスキル向上を支援</li>
+                        <li><strong>予算管理</strong>: 年間1億円のAI開発予算の配分と効果測定を実施</li>
+                        <li><strong>ステークホルダー調整</strong>: 経営陣、営業部門、顧客との技術的な調整を担当</li>
+                    </ul>
+                    
+                    <h2>👥 こんな人に向いています</h2>
+                    <ul>
+                        <li><strong>リーダーシップがある</strong> - 複数のチームを率いて目標達成に導ける</li>
+                        <li><strong>技術とビジネスの両方を理解</strong> - AI技術の可能性とビジネス価値を結びつけられる</li>
+                        <li><strong>コミュニケーションが得意</strong> - 技術者と非技術者の間で橋渡しができる</li>
+                        <li><strong>戦略的思考ができる</strong> - 長期的な視点で技術戦略を立てられる</li>
+                        <li><strong>問題解決が得意</strong> - 複雑な課題を整理して解決策を提示できる</li>
+                    </ul>
+                    
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>AI分野の最高峰キャリア</strong>の一つです。技術的な深さとマネジメント能力の両方が求められる重要な役割で、将来的にはCTO（最高技術責任者）やAI事業部長として、企業全体の技術戦略を担う立場にステップアップできます。</p>
+                    
+                    <h2>💡 まずは何から？</h2>
+                    <p>まずは<strong>AIエンジニアやデータサイエンティスト</strong>として実務経験を積み、その後<strong>プロジェクトマネージャー</strong>や<strong>テックリード</strong>としてチーム管理の経験を積むことが重要です。<strong>ビジネススキル</strong>（予算管理、ステークホルダー管理）も並行して学びましょう。</p>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
+                        <h3>📚 さらに詳しい情報</h3>
+                        <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/ai-development-director.md" 
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
+                           target="_blank">
+                            🔗 AI開発ディレクターの詳細キャリア情報を見る →
+                        </a>
+                        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+                            推奨資格、具体的な学習パス、キャリア展開例などの詳細情報
+                        </p>
+                    </div>
+                `
+            },
+            'audio-engineer': {
+                title: '音声・音響エンジニア',
+                content: `
+                    <h2>🎯 どんなお仕事？</h2>
+                    <p>音声・音響エンジニアは、<strong>音声や音響をAIで分析・処理する技術の専門家</strong>です。音声認識、音声合成、音楽生成、音響分析など、音に関する様々なAIシステムを開発します。</p>
+                    
+                    <h2>✨ やりがい・魅力</h2>
+                    <ul>
+                        <li><strong>音の不思議を解明</strong> - 人間の声や音楽をコンピュータが理解・生成する仕組みを作れる</li>
+                        <li><strong>実用的なAIを開発</strong> - 多くの人が日常的に使う音声アシスタントや翻訳機能を作れる</li>
+                        <li><strong>創造的な仕事</strong> - 新しい音声技術や音楽生成AIを設計できる</li>
+                        <li><strong>多分野での応用</strong> - エンターテイメント、医療、セキュリティなど様々な分野で活躍</li>
+                    </ul>
+                    
+                    <h2>🎵 具体的な案件例</h2>
+                    <ul>
+                        <li><strong>音声認識システム</strong>: 「OK Google」のような音声コマンドを認識するAI</li>
+                        <li><strong>音声合成</strong>: テキストを自然な音声に変換するシステム</li>
+                        <li><strong>音楽生成AI</strong>: 作曲支援や自動音楽生成システム</li>
+                        <li><strong>音声翻訳</strong>: リアルタイムで音声を翻訳するアプリ</li>
+                        <li><strong>音響分析</strong>: 工場の機械音から故障を予測するシステム</li>
+                    </ul>
+                    
+                    <h2>👥 こんな人に向いています</h2>
+                    <ul>
+                        <li><strong>音楽や音に興味がある</strong> - 音の違いを聞き分けるのが得意</li>
+                        <li><strong>数学が得意</strong> - 特に信号処理やフーリエ変換の理解が重要</li>
+                        <li><strong>細かい作業が得意</strong> - 音声データの前処理やパラメータ調整を丁寧に行える</li>
+                        <li><strong>新しい技術への学習意欲が高い</strong> - 最新の音声AI技術をキャッチアップできる</li>
+                        <li><strong>創造性がある</strong> - 新しい音声技術や音楽表現を考えられる</li>
+                    </ul>
+                    
+                    <h2>🚀 キャリアの魅力</h2>
+                    <p><strong>AI分野で最も創造的で楽しい</strong>職種の一つです。音声技術の進歩により、音声アシスタントや音楽AIの需要はますます高まっています。将来的には音声技術リードやAI音響エンジニアとして、より高度な音声AIシステムを設計する立場にステップアップできます。</p>
+                    
+                    <h2>💡 まずは何から？</h2>
+                    <p><strong>Python</strong>と<strong>librosa</strong>や<strong>pyaudio</strong>などの音声処理ライブラリから始めましょう。まずは簡単な音声分析（音の高さ、音量の測定など）を実装し、徐々に音声認識や音声合成に挑戦していきます。<strong>信号処理</strong>の基礎も並行して学ぶと良いでしょう。</p>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
+                        <h3>📚 さらに詳しい情報</h3>
+                        <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/audio-engineer.md" 
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
+                           target="_blank">
+                            🔗 音声・音響エンジニアの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
                             推奨資格、具体的な学習パス、キャリア展開例などの詳細情報
