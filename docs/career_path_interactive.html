@@ -69,6 +69,23 @@
         .checkbox-item:hover {
             background: #e3f2fd;
             border-color: #2196f3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* 専門分野項目の強調スタイル */
+        .checkbox-item[style*="border-left: 4px solid #e74c3c"] {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffeaa7 100%);
+            border: 2px solid #e74c3c;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(231, 76, 60, 0.2);
+        }
+        
+        .checkbox-item[style*="border-left: 4px solid #e74c3c"]:hover {
+            background: linear-gradient(135deg, #ffe5e5 0%, #fdcb6e 100%);
+            border-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(231, 76, 60, 0.3);
         }
         
         .checkbox-item input[type="checkbox"] {
@@ -100,11 +117,11 @@
         }
         
         .result-section {
-            margin-top: 30px;
-            padding: 25px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            padding: 30px;
             border-radius: 10px;
+            margin-top: 30px;
             display: none;
         }
         
@@ -379,69 +396,88 @@
         <div class="section">
             <h2>🎯 Step 2: 興味・関心分野</h2>
             <div class="checkbox-group">
+                <!-- 基本技術関心 -->
                 <div class="checkbox-item">
-                    <input type="checkbox" id="data-analysis" data-category="interest" data-weight="data-science,consultant">
-                    <label for="data-analysis">データ分析 - 数字から洞察を得ることが好き</label>
+                    <input type="checkbox" id="data-analysis" data-category="interest" data-weight="data-science,consultant" data-base-weight="2">
+                    <label for="data-analysis">📊 データ分析 - 数字から洞察を得ることが好き</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="system-dev" data-category="interest" data-weight="ml-engineer,data-engineer,mlops-engineer">
-                    <label for="system-dev">システム開発 - 実際に動くシステムを作りたい</label>
+                    <input type="checkbox" id="system-dev" data-category="interest" data-weight="ml-engineer,data-engineer,mlops-engineer" data-base-weight="2">
+                    <label for="system-dev">⚙️ システム開発 - 実際に動くシステムを作りたい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="research" data-category="interest" data-weight="research,specialist">
-                    <label for="research">研究・開発 - 最新技術を追求したい</label>
+                    <input type="checkbox" id="research" data-category="interest" data-weight="research,specialist" data-base-weight="2">
+                    <label for="research">🔬 研究・開発 - 最新技術を追求したい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="business" data-category="interest" data-weight="consultant,product-manager">
-                    <label for="business">ビジネス - 技術をビジネス価値に変換したい</label>
+                    <input type="checkbox" id="business" data-category="interest" data-weight="consultant,product-manager" data-base-weight="2">
+                    <label for="business">💼 ビジネス - 技術をビジネス価値に変換したい</label>
+                </div>
+                
+                <!-- 専門分野（研修コースと直結） -->
+                <div class="checkbox-item">
+                    <input type="checkbox" id="time-series-analysis" data-category="specialized" data-weight="data-science,ml-engineer" data-base-weight="4" data-specialization="time-series">
+                    <label for="time-series-analysis">📈 時系列解析 - 需要予測・異常検知・金融分析に興味がある</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="consulting" data-category="interest" data-weight="consultant">
-                    <label for="consulting">コンサルティング - 課題解決・提案が得意</label>
+                    <input type="checkbox" id="computer-vision" data-category="specialized" data-weight="cv-engineer,ml-engineer" data-base-weight="4" data-specialization="computer-vision">
+                    <label for="computer-vision">🖼️ 画像認識・CV - 品質検査・医療画像・自動運転に興味がある</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="management" data-category="interest" data-weight="product-manager">
-                    <label for="management">マネジメント - チームを率いて成果を出したい</label>
+                    <input type="checkbox" id="natural-language" data-category="specialized" data-weight="nlp-engineer,ml-engineer" data-base-weight="4" data-specialization="nlp">
+                    <label for="natural-language">📝 自然言語処理 - チャットボット・文書分析・感情分析に興味がある</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="vision" data-category="interest" data-weight="cv-engineer">
-                    <label for="vision">画像・映像 - 視覚的なデータに興味がある</label>
+                    <input type="checkbox" id="recommendation-systems" data-category="specialized" data-weight="data-science,ml-engineer" data-base-weight="4" data-specialization="recommendation">
+                    <label for="recommendation-systems">🎯 レコメンデーション - ECサイト・コンテンツ推薦・マーケティングに興味がある</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="nlp" data-category="interest" data-weight="nlp-engineer">
-                    <label for="nlp">言語・文章 - テキストデータの処理に興味がある</label>
+                    <input type="checkbox" id="anomaly-detection" data-category="specialized" data-weight="data-science,ml-engineer" data-base-weight="4" data-specialization="anomaly-detection">
+                    <label for="anomaly-detection">🔍 異常検知 - 設備監視・不正検知・品質管理に興味がある</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="audio" data-category="interest" data-weight="audio-engineer">
-                    <label for="audio">音声・音響 - 音に関する技術に興味がある</label>
+                    <input type="checkbox" id="data-engineering" data-category="specialized" data-weight="data-engineer,mlops-engineer" data-base-weight="4" data-specialization="data-engineering">
+                    <label for="data-engineering">🏭 データエンジニアリング - データ基盤構築・パイプライン設計に興味がある</label>
+                </div>
+                
+                <!-- その他専門分野 -->
+                <div class="checkbox-item">
+                    <input type="checkbox" id="audio" data-category="interest" data-weight="audio-engineer" data-base-weight="3">
+                    <label for="audio">🎵 音声・音響 - 音に関する技術に興味がある</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="robotics" data-category="interest" data-weight="robotics-engineer">
-                    <label for="robotics">ロボティクス - 自律システム・制御技術に興味がある</label>
+                    <input type="checkbox" id="robotics" data-category="interest" data-weight="robotics-engineer" data-base-weight="3">
+                    <label for="robotics">🤖 ロボティクス - 自律システム・制御技術に興味がある</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="infrastructure" data-category="interest" data-weight="data-engineer,mlops-engineer">
-                    <label for="infrastructure">インフラ・基盤 - 大規模システムの構築・運用が好き</label>
+                    <input type="checkbox" id="security" data-category="interest" data-weight="ai-security-engineer" data-base-weight="3">
+                    <label for="security">🛡️ セキュリティ - AIシステムの安全性確保に興味がある</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="security" data-category="interest" data-weight="ai-security-engineer">
-                    <label for="security">セキュリティ - AIシステムの安全性確保に興味がある</label>
+                    <input type="checkbox" id="architecture" data-category="interest" data-weight="ai-architect" data-base-weight="3">
+                    <label for="architecture">🏗️ システム設計 - 大規模AIシステムの全体設計に興味がある</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="architecture" data-category="interest" data-weight="ai-architect">
-                    <label for="architecture">システム設計 - 大規模AIシステムの全体設計に興味がある</label>
+                    <input type="checkbox" id="edge-computing" data-category="interest" data-weight="edge-ai-engineer" data-base-weight="3">
+                    <label for="edge-computing">📱 エッジコンピューティング - スマホ・IoTデバイスでのAI実装に興味がある</label>
+                </div>
+                
+                <!-- ビジネス・マネジメント関連 -->
+                <div class="checkbox-item">
+                    <input type="checkbox" id="consulting" data-category="interest" data-weight="consultant" data-base-weight="2">
+                    <label for="consulting">🤝 コンサルティング - 課題解決・提案が得意</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="edge-computing" data-category="interest" data-weight="edge-ai-engineer">
-                    <label for="edge-computing">エッジコンピューティング - スマホ・IoTデバイスでのAI実装に興味がある</label>
+                    <input type="checkbox" id="management" data-category="interest" data-weight="product-manager" data-base-weight="2">
+                    <label for="management">👥 マネジメント - チームを率いて成果を出したい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="education" data-category="interest" data-weight="ai-trainer">
-                    <label for="education">教育・研修 - AI技術を他の人に教えることが好き</label>
+                    <input type="checkbox" id="education" data-category="interest" data-weight="ai-trainer" data-base-weight="2">
+                    <label for="education">📚 教育・研修 - AI技術を他の人に教えることが好き</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="team-management" data-category="interest" data-weight="ai-development-director">
-                    <label for="team-management">チーム統制 - 複数のAIチームを統括・管理したい</label>
+                    <input type="checkbox" id="team-management" data-category="interest" data-weight="ai-development-director" data-base-weight="2">
+                    <label for="team-management">🎯 チーム統制 - 複数のAIチームを統括・管理したい</label>
                 </div>
             </div>
         </div>
@@ -449,99 +485,155 @@
         <div class="section">
             <h2>💼 Step 3: 働き方の志向性</h2>
             <div class="checkbox-group">
+                <!-- 技術深度の志向 -->
                 <div class="checkbox-item">
-                    <input type="checkbox" id="tech-deep" data-category="workstyle" data-weight="research,specialist,ml-engineer">
-                    <label for="tech-deep">技術深化 - 特定技術の専門家になりたい</label>
+                    <input type="checkbox" id="tech-deep" data-category="workstyle" data-weight="research,cv-engineer,nlp-engineer,audio-engineer,robotics-engineer,ai-security-engineer" data-base-weight="3">
+                    <label for="tech-deep">🔬 技術深化 - 特定技術の専門家になりたい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="tech-broad" data-category="workstyle" data-weight="data-science,consultant">
-                    <label for="tech-broad">技術幅広 - 複数技術を横断的に活用したい</label>
+                    <input type="checkbox" id="tech-broad" data-category="workstyle" data-weight="data-science,consultant,ai-architect" data-base-weight="2">
+                    <label for="tech-broad">🌐 技術幅広 - 複数技術を横断的に活用したい</label>
+                </div>
+                
+                <!-- 作業スタイル -->
+                <div class="checkbox-item">
+                    <input type="checkbox" id="individual" data-category="workstyle" data-weight="research,ml-engineer,data-engineer,mlops-engineer,cv-engineer,nlp-engineer" data-base-weight="2">
+                    <label for="individual">🧑‍💻 個人作業 - 集中して技術に取り組みたい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="individual" data-category="workstyle" data-weight="research,ml-engineer,data-engineer,mlops-engineer">
-                    <label for="individual">個人作業 - 集中して技術に取り組みたい</label>
+                    <input type="checkbox" id="team" data-category="workstyle" data-weight="data-science,consultant,product-manager,ai-development-director" data-base-weight="2">
+                    <label for="team">👥 チーム作業 - 他者と協力して成果を出したい</label>
+                </div>
+                
+                <!-- 環境の志向 -->
+                <div class="checkbox-item">
+                    <input type="checkbox" id="internal" data-category="workstyle" data-weight="ml-engineer,data-engineer,product-manager,mlops-engineer" data-base-weight="2">
+                    <label for="internal">🏢 社内勤務 - 自社プロダクト開発に集中したい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="team" data-category="workstyle" data-weight="data-science,consultant,product-manager">
-                    <label for="team">チーム作業 - 他者と協力して成果を出したい</label>
+                    <input type="checkbox" id="customer" data-category="workstyle" data-weight="consultant" data-base-weight="2">
+                    <label for="customer">🤝 顧客対応 - 様々な業界・企業と関わりたい</label>
+                </div>
+                
+                <!-- 志向性 -->
+                <div class="checkbox-item">
+                    <input type="checkbox" id="stable" data-category="workstyle" data-weight="data-science,data-engineer,mlops-engineer" data-base-weight="1">
+                    <label for="stable">🎯 安定志向 - 着実にスキルアップしたい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="internal" data-category="workstyle" data-weight="ml-engineer,data-engineer,product-manager,mlops-engineer">
-                    <label for="internal">社内勤務 - 自社プロダクト開発に集中したい</label>
+                    <input type="checkbox" id="challenge" data-category="workstyle" data-weight="audio-engineer,robotics-engineer,cv-engineer,nlp-engineer" data-base-weight="2">
+                    <label for="challenge">🚀 挑戦志向 - 新しいことに積極的に取り組みたい</label>
+                </div>
+                
+                <!-- 特殊な志向性 -->
+                <div class="checkbox-item">
+                    <input type="checkbox" id="strategic-thinking" data-category="workstyle" data-weight="ai-development-director,ai-architect" data-base-weight="2">
+                    <label for="strategic-thinking">📋 戦略思考 - 中長期的な技術戦略を考えたい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="customer" data-category="workstyle" data-weight="consultant">
-                    <label for="customer">顧客対応 - 様々な業界・企業と関わりたい</label>
+                    <input type="checkbox" id="architecture-thinking" data-category="workstyle" data-weight="ai-architect,mlops-engineer" data-base-weight="2">
+                    <label for="architecture-thinking">🏗️ 全体設計 - システム全体を俯瞰して設計したい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="stable" data-category="workstyle" data-weight="data-science,data-engineer,mlops-engineer">
-                    <label for="stable">安定志向 - 着実にスキルアップしたい</label>
+                    <input type="checkbox" id="security-focus" data-category="workstyle" data-weight="ai-security-engineer" data-base-weight="3">
+                    <label for="security-focus">🛡️ 安全性重視 - リスク管理・セキュリティを最優先したい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="challenge" data-category="workstyle" data-weight="audio-engineer,robotics-engineer">
-                    <label for="challenge">挑戦志向 - 新しいことに積極的に取り組みたい</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="strategic-thinking" data-category="workstyle" data-weight="ai-development-director">
-                    <label for="strategic-thinking">戦略思考 - 中長期的な技術戦略を考えたい</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="architecture-thinking" data-category="workstyle" data-weight="ai-architect">
-                    <label for="architecture-thinking">全体設計 - システム全体を俯瞰して設計したい</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="security-focus" data-category="workstyle" data-weight="ai-security-engineer">
-                    <label for="security-focus">安全性重視 - リスク管理・セキュリティを最優先したい</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="teaching" data-category="workstyle" data-weight="ai-trainer">
-                    <label for="teaching">教育・指導 - 人に教えることで成長を実感したい</label>
+                    <input type="checkbox" id="teaching" data-category="workstyle" data-weight="ai-trainer" data-base-weight="2">
+                    <label for="teaching">👨‍🏫 教育・指導 - 人に教えることで成長を実感したい</label>
                 </div>
             </div>
         </div>
         
         <div class="section">
-            <h2>🚀 Step 4: 将来の目標</h2>
+            <h2>🚀 Step 4: 将来の目標・キャリア発展</h2>
             <div class="checkbox-group">
+                <!-- 専門特化系目標 -->
                 <div class="checkbox-item">
-                    <input type="checkbox" id="specialist-goal" data-category="goal" data-weight="audio-engineer,robotics-engineer">
-                    <label for="specialist-goal">技術のスペシャリスト - 特定分野の第一人者</label>
+                    <input type="checkbox" id="specialist-goal" data-category="goal" data-weight="cv-engineer,nlp-engineer,audio-engineer,robotics-engineer,ai-security-engineer" data-base-weight="3">
+                    <label for="specialist-goal">🏆 技術のスペシャリスト - 特定分野の第一人者</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="leader-goal" data-category="goal" data-weight="ml-engineer,data-science,mlops-engineer">
-                    <label for="leader-goal">プロジェクトリーダー - 技術プロジェクトの責任者</label>
+                    <input type="checkbox" id="research-leader-goal" data-category="goal" data-weight="research,cv-engineer,nlp-engineer" data-base-weight="3">
+                    <label for="research-leader-goal">🔬 リサーチリーダー - 技術革新・最新研究をリードしたい</label>
+                </div>
+                
+                <!-- プロジェクト・チーム系目標 -->
+                <div class="checkbox-item">
+                    <input type="checkbox" id="leader-goal" data-category="goal" data-weight="ml-engineer,data-science,mlops-engineer" data-base-weight="2">
+                    <label for="leader-goal">👨‍💼 プロジェクトリーダー - 技術プロジェクトの責任者</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="manager-goal" data-category="goal" data-weight="product-manager">
-                    <label for="manager-goal">マネージャー - チーム・組織の管理者</label>
+                    <input type="checkbox" id="manager-goal" data-category="goal" data-weight="product-manager,ai-development-director" data-base-weight="2">
+                    <label for="manager-goal">📊 マネージャー - チーム・組織の管理者</label>
+                </div>
+                
+                <!-- ビジネス系目標 -->
+                <div class="checkbox-item">
+                    <input type="checkbox" id="consultant-goal" data-category="goal" data-weight="consultant" data-base-weight="2">
+                    <label for="consultant-goal">🤝 コンサルタント - 専門知識を活かした提案・支援</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="consultant-goal" data-category="goal" data-weight="consultant">
-                    <label for="consultant-goal">コンサルタント - 専門知識を活かした提案・支援</label>
+                    <input type="checkbox" id="entrepreneur-goal" data-category="goal" data-weight="consultant,ai-development-director" data-base-weight="2">
+                    <label for="entrepreneur-goal">🚀 起業・独立 - 自分の事業を立ち上げたい</label>
+                </div>
+                
+                <!-- 上級専門職系目標 -->
+                <div class="checkbox-item">
+                    <input type="checkbox" id="architect-goal" data-category="goal" data-weight="ai-architect" data-base-weight="3">
+                    <label for="architect-goal">🏗️ テクニカルアーキテクト - 技術戦略・システム設計の責任者</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="entrepreneur-goal" data-category="goal" data-weight="consultant">
-                    <label for="entrepreneur-goal">起業・独立 - 自分の事業を立ち上げたい</label>
+                    <input type="checkbox" id="director-goal" data-category="goal" data-weight="ai-development-director" data-base-weight="2">
+                    <label for="director-goal">🎯 開発責任者 - AI開発部門全体を統括したい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="director-goal" data-category="goal" data-weight="ai-development-director">
-                    <label for="director-goal">開発責任者 - AI開発部門全体を統括したい</label>
+                    <input type="checkbox" id="security-expert-goal" data-category="goal" data-weight="ai-security-engineer" data-base-weight="3">
+                    <label for="security-expert-goal">🛡️ セキュリティエキスパート - AIセキュリティ分野の専門家</label>
+                </div>
+                
+                <!-- 教育・研究系目標 -->
+                <div class="checkbox-item">
+                    <input type="checkbox" id="researcher-goal" data-category="goal" data-weight="ai-trainer,research" data-base-weight="2">
+                    <label for="researcher-goal">📚 研究者・教育者 - 学術・教育分野で活躍したい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="researcher-goal" data-category="goal" data-weight="ai-trainer">
-                    <label for="researcher-goal">研究者・教育者 - 学術・教育分野で活躍したい</label>
+                    <input type="checkbox" id="trainer-goal" data-category="goal" data-weight="ai-trainer" data-base-weight="2">
+                    <label for="trainer-goal">👨‍🏫 トレーナー・講師 - AI教育分野のリーダー</label>
                 </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="architect-goal" data-category="goal" data-weight="ai-architect">
-                    <label for="architect-goal">テクニカルアーキテクト - 技術戦略・システム設計の責任者</label>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>💡 Step 5: 案件・プロジェクト経験（ボーナスポイント）</h2>
+            <p style="color: #666; margin-bottom: 15px;">
+                担当したい案件タイプを選択すると、対応する専門分野がさらに強化されます
+            </p>
+            <div class="checkbox-group">
+                <!-- 案件タイプによる専門分野強化 -->
+                <div class="checkbox-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
+                    <input type="checkbox" id="forecasting-projects" data-category="project" data-weight="data-science" data-base-weight="3" data-specialization-boost="time-series">
+                    <label for="forecasting-projects">📈 <strong>需要予測・売上予測案件</strong> - 小売業・製造業・金融業</label>
                 </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="security-expert-goal" data-category="goal" data-weight="ai-security-engineer">
-                    <label for="security-expert-goal">セキュリティエキスパート - AIセキュリティ分野の専門家</label>
+                <div class="checkbox-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white;">
+                    <input type="checkbox" id="quality-inspection" data-category="project" data-weight="cv-engineer" data-base-weight="3" data-specialization-boost="computer-vision">
+                    <label for="quality-inspection">🖼️ <strong>品質検査・画像診断案件</strong> - 製造業・医療業</label>
                 </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="trainer-goal" data-category="goal" data-weight="ai-trainer">
-                    <label for="trainer-goal">トレーナー・講師 - AI教育分野のリーダー</label>
+                <div class="checkbox-item" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white;">
+                    <input type="checkbox" id="chatbot-nlp" data-category="project" data-weight="nlp-engineer" data-base-weight="3" data-specialization-boost="nlp">
+                    <label for="chatbot-nlp">📝 <strong>チャットボット・文書分析案件</strong> - カスタマーサポート・法務</label>
+                </div>
+                <div class="checkbox-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white;">
+                    <input type="checkbox" id="recommendation-projects" data-category="project" data-weight="data-science" data-base-weight="3" data-specialization-boost="recommendation">
+                    <label for="recommendation-projects">🎯 <strong>レコメンド・マーケティング案件</strong> - EC・メディア・エンタメ</label>
+                </div>
+                <div class="checkbox-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <input type="checkbox" id="anomaly-projects" data-category="project" data-weight="data-science" data-base-weight="3" data-specialization-boost="anomaly-detection">
+                    <label for="anomaly-projects">🔍 <strong>異常検知・不正検知案件</strong> - 設備監視・金融・セキュリティ</label>
+                </div>
+                <div class="checkbox-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
+                    <input type="checkbox" id="data-platform" data-category="project" data-weight="data-engineer" data-base-weight="3" data-specialization-boost="data-engineering">
+                    <label for="data-platform">🏭 <strong>データ基盤・分析基盤案件</strong> - 全業界対応</label>
                 </div>
             </div>
         </div>
@@ -1175,10 +1267,11 @@
             }
         };
 
-        // スコア計算とリアルタイム更新
+        // スコア計算とリアルタイム更新（専門分野重み強化版）
         function calculateScores() {
             const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
             const scores = {};
+            const specializationBoosts = {}; // 専門分野ブースト追跡
             
             // 全キャリアパスのスコアを初期化
             Object.keys(careerPaths).forEach(key => {
@@ -1188,31 +1281,94 @@
             // チェックされた項目に基づいてスコアを計算
             checkboxes.forEach(checkbox => {
                 const weights = checkbox.dataset.weight;
+                const baseWeight = parseInt(checkbox.dataset.baseWeight) || 1; // デフォルトは1
+                const category = checkbox.dataset.category;
+                const specialization = checkbox.dataset.specialization;
+                const specializationBoost = checkbox.dataset.specializationBoost;
+                
                 if (weights) {
                     weights.split(',').forEach(career => {
                         if (scores[career] !== undefined) {
-                            scores[career] += 1;
+                            let multiplier = baseWeight;
+                            
+                            // 専門分野項目の場合は追加の重み付け
+                            if (category === 'specialized') {
+                                multiplier *= 1.5; // 専門分野項目は1.5倍
+                            }
+                            
+                            // プロジェクト経験による専門分野強化
+                            if (category === 'project' && specializationBoost) {
+                                multiplier *= 1.3; // プロジェクト経験は1.3倍
+                                
+                                // 対応する専門分野を追跡
+                                if (!specializationBoosts[specializationBoost]) {
+                                    specializationBoosts[specializationBoost] = 0;
+                                }
+                                specializationBoosts[specializationBoost] += 2;
+                            }
+                            
+                            scores[career] += multiplier;
                         }
                     });
+                }
+            });
+            
+            // 専門分野ブーストの適用
+            Object.keys(specializationBoosts).forEach(specialization => {
+                const boost = specializationBoosts[specialization];
+                
+                // 専門分野に対応するキャリアパスにブーストを適用
+                switch(specialization) {
+                    case 'time-series':
+                        scores['data-science'] = (scores['data-science'] || 0) + boost;
+                        scores['ml-engineer'] = (scores['ml-engineer'] || 0) + boost * 0.8;
+                        break;
+                    case 'computer-vision':
+                        scores['cv-engineer'] = (scores['cv-engineer'] || 0) + boost;
+                        scores['ml-engineer'] = (scores['ml-engineer'] || 0) + boost * 0.8;
+                        break;
+                    case 'nlp':
+                        scores['nlp-engineer'] = (scores['nlp-engineer'] || 0) + boost;
+                        scores['ml-engineer'] = (scores['ml-engineer'] || 0) + boost * 0.8;
+                        break;
+                    case 'recommendation':
+                        scores['data-science'] = (scores['data-science'] || 0) + boost;
+                        scores['ml-engineer'] = (scores['ml-engineer'] || 0) + boost * 0.8;
+                        break;
+                    case 'anomaly-detection':
+                        scores['data-science'] = (scores['data-science'] || 0) + boost;
+                        scores['ml-engineer'] = (scores['ml-engineer'] || 0) + boost * 0.8;
+                        break;
+                    case 'data-engineering':
+                        scores['data-engineer'] = (scores['data-engineer'] || 0) + boost;
+                        scores['mlops-engineer'] = (scores['mlops-engineer'] || 0) + boost * 0.8;
+                        break;
                 }
             });
             
             // 経験年数による重み付け
             const experience = parseInt(document.getElementById('experience').value) || 0;
             if (experience >= 8) {
-                scores['ai-development-director'] += 2;
+                scores['ai-development-director'] += 3;
+                scores['consultant'] += 2;
             }
             if (experience >= 5) {
-                scores['consultant'] += 1;
-                scores['product-manager'] += 1;
+                scores['consultant'] += 1.5;
+                scores['product-manager'] += 1.5;
                 scores['ai-development-director'] += 1;
+                scores['ai-architect'] += 1;
             }
             if (experience >= 3) {
                 scores['ml-engineer'] += 1;
                 scores['data-engineer'] += 1;
                 scores['mlops-engineer'] += 1;
+                scores['cv-engineer'] += 1;
+                scores['nlp-engineer'] += 1;
                 scores['audio-engineer'] += 1;
                 scores['robotics-engineer'] += 1;
+            }
+            if (experience >= 1) {
+                scores['data-science'] += 0.5;
             }
             
             return scores;
@@ -1269,16 +1425,99 @@
                 }).join('')}
             `;
             
-            // 学習開始のアクション
+            // 学習パス推奨と次のアクション
+            const topCareer = topCareers[0][0];
+            const recommendedSpecializations = getRecommendedSpecializations(topCareer, checkboxes);
+            
             learningPathDiv.innerHTML = `
+                <h3 style="color: #ffffff;">🎯 あなたの推奨学習パス</h3>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <h4 style="color: #ffd700; margin-top: 0;">📚 学習ステップ</h4>
+                    <div style="display: flex; align-items: center; margin: 10px 0;">
+                        <span style="background: #28a745; color: white; padding: 5px 10px; border-radius: 20px; margin-right: 10px;">Step 1</span>
+                        <span>共通基礎コース（5週間・必修）</span>
+                    </div>
+                    <div style="display: flex; align-items: center; margin: 10px 0;">
+                        <span style="background: #dc3545; color: white; padding: 5px 10px; border-radius: 20px; margin-right: 10px;">Step 2</span>
+                        <span>専門分野コース: ${recommendedSpecializations.join(' + ')}</span>
+                    </div>
+                    <div style="display: flex; align-items: center; margin: 10px 0;">
+                        <span style="background: #6f42c1; color: white; padding: 5px 10px; border-radius: 20px; margin-right: 10px;">Step 3</span>
+                        <span>経験年数別上級コース（シニア・PM・コンサルタント）</span>
+                    </div>
+                </div>
+                
                 <h3 style="color: #ffffff;">🚀 次のアクション</h3>
                 <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;">
-                                         <p><strong>1. 学習開始:</strong> <a href="https://github.com/CentralEden/ai_training/tree/main/foundations/00_development_setup" style="color: #ffd700;">Week 0: 開発環境セットアップ</a>から始めましょう</p>
-                                         <p><strong>2. 詳細情報:</strong> <a href="https://github.com/CentralEden/ai_training/blob/main/docs/ai_career_paths_guide.md" style="color: #ffd700;">キャリアパス詳細ガイド</a>で各職種の詳細を確認</p>
-                    <p><strong>3. メンター相談:</strong> 技術系キャリア（senior-engineers@company.com）またはビジネス系キャリア（business-mentors@company.com）</p>
-                    <p><strong>4. 学習計画:</strong> 推奨学習パスに基づいて具体的なスケジュールを立てましょう</p>
+                    <p><strong>1. 学習開始:</strong> <a href="../foundations/00_development_setup/" style="color: #ffd700;">Week 0: 開発環境セットアップ</a>から始めましょう</p>
+                    <p><strong>2. 詳細情報:</strong> <a href="ai_career_paths_guide.md" style="color: #ffd700;">キャリアパス詳細ガイド</a>で各職種の詳細を確認</p>
+                    <p><strong>3. 専門分野選択:</strong> 推奨された専門分野から案件に応じて選択</p>
+                    <p><strong>4. メンター相談:</strong> 技術系キャリア（senior-engineers@company.com）またはビジネス系キャリア（business-mentors@company.com）</p>
+                    <p><strong>5. 学習計画:</strong> 個人の学習ペースに合わせて具体的なスケジュールを策定</p>
                 </div>
             `;
+        }
+        
+        // 推奨専門分野を決定する関数
+        function getRecommendedSpecializations(topCareer, selectedCheckboxes) {
+            const specializations = [];
+            const selectedSpecializations = [];
+            
+            // 選択された専門分野項目を取得
+            selectedCheckboxes.forEach(checkbox => {
+                if (checkbox.dataset.category === 'specialized' || checkbox.dataset.specializationBoost) {
+                    const spec = checkbox.dataset.specialization || checkbox.dataset.specializationBoost;
+                    if (spec && !selectedSpecializations.includes(spec)) {
+                        selectedSpecializations.push(spec);
+                    }
+                }
+            });
+            
+            // 選択された専門分野がある場合はそれを優先
+            if (selectedSpecializations.length > 0) {
+                const specMap = {
+                    'time-series': '時系列解析',
+                    'computer-vision': '画像認識・CV',
+                    'nlp': '自然言語処理',
+                    'recommendation': 'レコメンデーション',
+                    'anomaly-detection': '異常検知',
+                    'data-engineering': 'データエンジニアリング'
+                };
+                
+                selectedSpecializations.forEach(spec => {
+                    if (specMap[spec]) {
+                        specializations.push(specMap[spec]);
+                    }
+                });
+            }
+            
+            // 選択された専門分野がない場合、キャリアに基づいて推奨
+            if (specializations.length === 0) {
+                switch(topCareer) {
+                    case 'data-science':
+                        specializations.push('時系列解析', 'レコメンデーション');
+                        break;
+                    case 'ml-engineer':
+                        specializations.push('画像認識・CV', '自然言語処理');
+                        break;
+                    case 'cv-engineer':
+                        specializations.push('画像認識・CV');
+                        break;
+                    case 'nlp-engineer':
+                        specializations.push('自然言語処理');
+                        break;
+                    case 'data-engineer':
+                        specializations.push('データエンジニアリング');
+                        break;
+                    case 'consultant':
+                        specializations.push('時系列解析', 'レコメンデーション');
+                        break;
+                    default:
+                        specializations.push('案件に応じて選択');
+                }
+            }
+            
+            return specializations.length > 0 ? specializations : ['案件に応じて選択'];
         }
 
         function resetForm() {
