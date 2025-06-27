@@ -159,7 +159,7 @@ AIプロダクトマネージャーは、AI技術を活用したプロダクト�
 ## 🔗 関連リンク
 
 - [← キャリアパス一覧に戻る](../ai_career_paths_guide.md)
-- [← 診断ツールに戻る](https://centraleden.github.io/ai_training/docs/career_path_interactive.html)
+- [← 診断ツールに戻る](https://centraleden.github.io/ai_training/career_path_interactive.html)
 - [データサイエンティスト詳細](data-scientist.md)
 - [AIコンサルタント詳細](ai-consultant.md)
 - [AI事業開発詳細](ai-business-development.md) 

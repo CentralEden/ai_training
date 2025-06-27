@@ -392,7 +392,7 @@
                     <label for="research">研究・開発 - 最新技術を追求したい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="business" data-category="interest" data-weight="consultant,product-manager,business-dev">
+                    <input type="checkbox" id="business" data-category="interest" data-weight="consultant,product-manager">
                     <label for="business">ビジネス - 技術をビジネス価値に変換したい</label>
                 </div>
                 <div class="checkbox-item">
@@ -400,7 +400,7 @@
                     <label for="consulting">コンサルティング - 課題解決・提案が得意</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="management" data-category="interest" data-weight="product-manager,business-dev">
+                    <input type="checkbox" id="management" data-category="interest" data-weight="product-manager">
                     <label for="management">マネジメント - チームを率いて成果を出したい</label>
                 </div>
                 <div class="checkbox-item">
@@ -439,6 +439,10 @@
                     <input type="checkbox" id="education" data-category="interest" data-weight="ai-trainer">
                     <label for="education">教育・研修 - AI技術を他の人に教えることが好き</label>
                 </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="team-management" data-category="interest" data-weight="ai-development-director">
+                    <label for="team-management">チーム統制 - 複数のAIチームを統括・管理したい</label>
+                </div>
             </div>
         </div>
         
@@ -466,7 +470,7 @@
                     <label for="internal">社内勤務 - 自社プロダクト開発に集中したい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="customer" data-category="workstyle" data-weight="consultant,business-dev">
+                    <input type="checkbox" id="customer" data-category="workstyle" data-weight="consultant">
                     <label for="customer">顧客対応 - 様々な業界・企業と関わりたい</label>
                 </div>
                 <div class="checkbox-item">
@@ -474,8 +478,12 @@
                     <label for="stable">安定志向 - 着実にスキルアップしたい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="challenge" data-category="workstyle" data-weight="research,business-dev,specialist">
+                    <input type="checkbox" id="challenge" data-category="workstyle" data-weight="audio-engineer,robotics-engineer">
                     <label for="challenge">挑戦志向 - 新しいことに積極的に取り組みたい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="strategic-thinking" data-category="workstyle" data-weight="ai-development-director">
+                    <label for="strategic-thinking">戦略思考 - 中長期的な技術戦略を考えたい</label>
                 </div>
                 <div class="checkbox-item">
                     <input type="checkbox" id="architecture-thinking" data-category="workstyle" data-weight="ai-architect">
@@ -496,7 +504,7 @@
             <h2>🚀 Step 4: 将来の目標</h2>
             <div class="checkbox-group">
                 <div class="checkbox-item">
-                    <input type="checkbox" id="specialist-goal" data-category="goal" data-weight="research,specialist">
+                    <input type="checkbox" id="specialist-goal" data-category="goal" data-weight="audio-engineer,robotics-engineer">
                     <label for="specialist-goal">技術のスペシャリスト - 特定分野の第一人者</label>
                 </div>
                 <div class="checkbox-item">
@@ -512,11 +520,15 @@
                     <label for="consultant-goal">コンサルタント - 専門知識を活かした提案・支援</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="entrepreneur-goal" data-category="goal" data-weight="business-dev">
+                    <input type="checkbox" id="entrepreneur-goal" data-category="goal" data-weight="consultant">
                     <label for="entrepreneur-goal">起業・独立 - 自分の事業を立ち上げたい</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="researcher-goal" data-category="goal" data-weight="research">
+                    <input type="checkbox" id="director-goal" data-category="goal" data-weight="ai-development-director">
+                    <label for="director-goal">開発責任者 - AI開発部門全体を統括したい</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="researcher-goal" data-category="goal" data-weight="ai-trainer">
                     <label for="researcher-goal">研究者・教育者 - 学術・教育分野で活躍したい</label>
                 </div>
                 <div class="checkbox-item">
@@ -1050,14 +1062,14 @@
                 nextSteps: ['データアーキテクト', 'プラットフォームエンジニア'],
                 detailLink: 'careers/data-engineer.md'
             },
-            'research': {
-                name: 'リサーチサイエンティスト',
-                description: '最先端AI技術の研究開発者',
+            'audio-engineer': {
+                name: '音声・音響エンジニア',
+                description: '音声認識・音響処理技術の専門家',
                 techDepth: 5,
-                businessInvolvement: 1,
-                learningPath: '共通基礎コース → 複数専門分野 → 研究プロジェクト',
-                nextSteps: ['研究ディレクター', 'CTO'],
-                detailLink: 'careers/research-scientist.md'
+                businessInvolvement: 2,
+                learningPath: '共通基礎コース → 音声処理 → 異常検知',
+                nextSteps: ['音声技術リード', 'AI音響エンジニア'],
+                detailLink: 'careers/audio-engineer.md'
             },
             'consultant': {
                 name: 'AIコンサルタント',
@@ -1077,15 +1089,7 @@
                 nextSteps: ['CPO', 'VP of Product'],
                 detailLink: 'careers/ai-product-manager.md'
             },
-            'business-dev': {
-                name: 'AI事業開発',
-                description: 'AI技術を活用した新規事業創出の専門家',
-                techDepth: 2,
-                businessInvolvement: 5,
-                learningPath: '共通基礎コース → 時系列解析 → 事業開発コース',
-                nextSteps: ['新規事業部門長', '起業'],
-                detailLink: 'careers/ai-business-development.md'
-            },
+
             'cv-engineer': {
                 name: 'コンピュータビジョンエンジニア',
                 description: '画像・映像解析技術の専門家',
@@ -1104,24 +1108,8 @@
                 nextSteps: ['NLPテックリード', '対話AI責任者'],
                 detailLink: 'careers/nlp-engineer.md'
             },
-            'audio-engineer': {
-                name: '音声・音響エンジニア',
-                description: '音声認識・音響処理技術の専門家',
-                techDepth: 5,
-                businessInvolvement: 2,
-                learningPath: '共通基礎コース → 音声処理 → 異常検知',
-                nextSteps: ['音声技術リード', 'AI音響エンジニア'],
-                detailLink: 'careers/audio-engineer.md'
-            },
-            'robotics-engineer': {
-                name: 'ロボティクスエンジニア',
-                description: 'ロボット制御・AI統合システムの専門家',
-                techDepth: 5,
-                businessInvolvement: 2,
-                learningPath: '共通基礎コース → 画像認識 → 制御システム',
-                nextSteps: ['ロボティクスリード', '自律システム設計者'],
-                detailLink: 'careers/robotics-engineer.md'
-            },
+
+
             'mlops-engineer': {
                 name: 'MLOpsエンジニア',
                 description: 'ML基盤・運用自動化の専門家',
@@ -1158,6 +1146,24 @@
                 nextSteps: ['IoTアーキテクト', 'モバイルAIリード'],
                 detailLink: 'careers/edge-ai-engineer.md'
             },
+            'robotics-engineer': {
+                name: 'ロボティクスエンジニア',
+                description: 'ロボット制御・AI統合システムの専門家',
+                techDepth: 5,
+                businessInvolvement: 2,
+                learningPath: '共通基礎コース → 画像認識 → 制御システム',
+                nextSteps: ['ロボティクスリード', '自律システム設計者'],
+                detailLink: 'careers/robotics-engineer.md'
+            },
+            'ai-development-director': {
+                name: 'AI開発ディレクター',
+                description: 'AI開発部門・複数チームの統制責任者',
+                techDepth: 4,
+                businessInvolvement: 5,
+                learningPath: '共通基礎コース → 専門分野 → マネジメント・戦略',
+                nextSteps: ['CTO', 'AI事業部長'],
+                detailLink: 'careers/ai-development-director.md'
+            },
             'ai-trainer': {
                 name: 'AI研修・教育エンジニア',
                 description: 'AI技術教育・人材育成の専門家',
@@ -1193,15 +1199,20 @@
             
             // 経験年数による重み付け
             const experience = parseInt(document.getElementById('experience').value) || 0;
+            if (experience >= 8) {
+                scores['ai-development-director'] += 2;
+            }
             if (experience >= 5) {
                 scores['consultant'] += 1;
                 scores['product-manager'] += 1;
-                scores['research'] += 1;
+                scores['ai-development-director'] += 1;
             }
             if (experience >= 3) {
                 scores['ml-engineer'] += 1;
                 scores['data-engineer'] += 1;
                 scores['mlops-engineer'] += 1;
+                scores['audio-engineer'] += 1;
+                scores['robotics-engineer'] += 1;
             }
             
             return scores;

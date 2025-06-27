@@ -6,7 +6,7 @@
 質問に答えて、自分にぴったりの道筋を発見しましょう！
 
 ### 🚀 インタラクティブ診断ツール
-**[📊 自動診断ツールを使用する](https://centraleden.github.io/ai_training/docs/career_path_interactive.html)**
+**[📊 自動診断ツールを使用する](https://centraleden.github.io/ai_training/career_path_interactive.html)**
 - チェックボックスを選択すると自動で最適なキャリアパスを計算・表示
 - リアルタイムで結果が更新される便利なツール
 - 適合度をパーセンテージで表示

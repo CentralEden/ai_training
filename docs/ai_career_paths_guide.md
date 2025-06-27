@@ -4,7 +4,7 @@
 
 ## 📋 目次
 
-### 🎯 [キャリア診断ツール](https://centraleden.github.io/ai_training/docs/career_path_interactive.html)
+### 🎯 [キャリア診断ツール](https://centraleden.github.io/ai_training/career_path_interactive.html)
 - インタラクティブ診断で自分に最適なキャリアパスを発見
 - 4ステップの質問でパーソナライズされた推奨キャリアを提案
 
@@ -24,60 +24,70 @@
    - データ基盤の構築・運用のスペシャリスト
    - 技術深度: ⭐⭐⭐⭐ | ビジネス関与: ⭐⭐
 
-4. **[リサーチサイエンティスト](careers/research-scientist.md)**
-   - 最先端AI技術の研究開発者
-   - 技術深度: ⭐⭐⭐⭐⭐ | ビジネス関与: ⭐
-
-5. **[MLOpsエンジニア](careers/mlops-engineer.md)**
+4. **[MLOpsエンジニア](careers/mlops-engineer.md)**
    - ML基盤・運用自動化の専門家
    - 技術深度: ⭐⭐⭐⭐ | ビジネス関与: ⭐⭐
 
-#### 🏗️ アーキテクチャ・設計系
-
-6. **[AI/MLアーキテクト](careers/ai-architect.md)**
-   - 大規模AIシステムの設計・技術戦略の責任者
-   - 技術深度: ⭐⭐⭐⭐⭐ | ビジネス関与: ⭐⭐⭐⭐
-
 #### 💼 ビジネス系キャリア
 
-7. **[AIプロダクトマネージャー](careers/ai-product-manager.md)**
+5. **[AIプロダクトマネージャー](careers/ai-product-manager.md)**
    - AIプロダクトの企画・開発・運用責任者
    - 技術深度: ⭐⭐ | ビジネス関与: ⭐⭐⭐⭐⭐
 
-8. **[AIコンサルタント](careers/ai-consultant.md)**
+6. **[AIコンサルタント](careers/ai-consultant.md)**
    - AI技術を活用したビジネス課題解決の専門家
    - 技術深度: ⭐⭐ | ビジネス関与: ⭐⭐⭐⭐⭐
 
 #### 🔧 専門技術特化系
 
-9. **[コンピュータビジョンエンジニア](careers/computer-vision-engineer.md)**
+7. **[コンピュータビジョンエンジニア](careers/computer-vision-engineer.md)**
    - 画像・映像解析技術の専門家
    - 技術深度: ⭐⭐⭐⭐⭐ | ビジネス関与: ⭐⭐
 
-10. **[自然言語処理エンジニア](careers/nlp-engineer.md)**
-    - テキスト・言語処理技術の専門家
+8. **[自然言語処理エンジニア](careers/nlp-engineer.md)**
+   - テキスト・言語処理技術の専門家
+   - 技術深度: ⭐⭐⭐⭐⭐ | ビジネス関与: ⭐⭐
+
+9. **[音声・音響エンジニア](careers/audio-engineer.md)**
+   - 音声認識・音響処理技術の専門家
+   - 技術深度: ⭐⭐⭐⭐⭐ | ビジネス関与: ⭐⭐
+
+10. **[ロボティクスエンジニア](careers/robotics-engineer.md)**
+    - ロボット制御・AI統合システムの専門家
     - 技術深度: ⭐⭐⭐⭐⭐ | ビジネス関与: ⭐⭐
 
 11. **[エッジAIエンジニア](careers/edge-ai-engineer.md)**
     - モバイル・IoTデバイス向けAI実装の専門家
     - 技術深度: ⭐⭐⭐⭐⭐ | ビジネス関与: ⭐⭐
 
+#### 🏗️ アーキテクチャ・設計系
+
+12. **[AI/MLアーキテクト](careers/ai-architect.md)**
+    - 大規模AIシステムの設計・技術戦略の責任者
+    - 技術深度: ⭐⭐⭐⭐⭐ | ビジネス関与: ⭐⭐⭐⭐
+
 #### 🛡️ セキュリティ・特殊領域系
 
-12. **[AIセキュリティエンジニア](careers/ai-security-engineer.md)**
+13. **[AIセキュリティエンジニア](careers/ai-security-engineer.md)**
     - AIシステムのセキュリティ・プライバシー保護の専門家
     - 技術深度: ⭐⭐⭐⭐⭐ | ビジネス関与: ⭐⭐⭐
 
+#### 👨‍💼 マネジメント・統制系
+
+14. **[AI開発ディレクター](careers/ai-development-director.md)**
+    - AI開発部門・複数チームの統制責任者
+    - 技術深度: ⭐⭐⭐⭐ | ビジネス関与: ⭐⭐⭐⭐⭐
+
 #### 📚 教育・人材育成系
 
-13. **[AI研修・教育エンジニア](careers/ai-trainer.md)**
+15. **[AI研修・教育エンジニア](careers/ai-trainer.md)**
     - AI技術教育・人材育成の専門家
     - 技術深度: ⭐⭐⭐⭐ | ビジネス関与: ⭐⭐⭐⭐
 
 ## 🚀 キャリア選択のステップ
 
 ### Step 1: 自己分析
-- [キャリア診断ツール](https://centraleden.github.io/ai_training/docs/career_path_interactive.html)を活用
+- [キャリア診断ツール](https://centraleden.github.io/ai_training/career_path_interactive.html)を活用
 - 技術志向 vs ビジネス志向の確認
 - 現在のスキルレベルの把握
 
@@ -99,20 +109,20 @@
 ## 📈 キャリア発展パターン
 
 ### 技術深化型
-**データサイエンティスト** → **シニアデータサイエンティスト** → **リサーチサイエンティスト**
+**データサイエンティスト** → **シニアデータサイエンティスト** → **AI/MLアーキテクト**
 
 ### 技術リーダー型
-**機械学習エンジニア** → **MLテックリード** → **AI/MLアーキテクト**
+**機械学習エンジニア** → **MLテックリード** → **AI開発ディレクター**
 
 ### ビジネス展開型
 **データサイエンティスト** → **AIコンサルタント** → **AIプロダクトマネージャー**
 
 ### 専門特化型
-**機械学習エンジニア** → **コンピュータビジョンエンジニア** → **自動運転エンジニア**
+**機械学習エンジニア** → **コンピュータビジョンエンジニア** → **ロボティクスエンジニア**
 
 ## 🎯 次のアクション
 
-1. **[キャリア診断を受ける](https://centraleden.github.io/ai_training/docs/career_path_interactive.html)** - 5分で完了
+1. **[キャリア診断を受ける](https://centraleden.github.io/ai_training/career_path_interactive.html)** - 5分で完了
 2. **興味のあるキャリアの詳細を確認** - 上記リンクから
 3. **[学習プログラムを開始](../README.md)** - 基礎から実践まで
 4. **メンターとの面談予約** - キャリア相談・学習計画策定

@@ -149,7 +149,7 @@
 ## 🔗 関連リンク
 
 - [← キャリアパス一覧に戻る](../ai_career_paths_guide.md)
-- [← 診断ツールに戻る](https://centraleden.github.io/ai_training/docs/career_path_interactive.html)
+- [← 診断ツールに戻る](https://centraleden.github.io/ai_training/career_path_interactive.html)
 - [データサイエンティスト詳細](data-scientist.md)
 - [機械学習エンジニア詳細](machine-learning-engineer.md)
 - [MLOpsエンジニア詳細](mlops-engineer.md) 

@@ -110,7 +110,7 @@
 ## 🔗 関連リンク
 
 - [← キャリアパス一覧に戻る](../ai_career_paths_guide.md)
-- [← 診断ツールに戻る](https://centraleden.github.io/ai_training/docs/career_path_interactive.html)
+- [← 診断ツールに戻る](https://centraleden.github.io/ai_training/career_path_interactive.html)
 - [機械学習エンジニア詳細](machine-learning-engineer.md)
 - [AIコンサルタント詳細](ai-consultant.md)
 - [AIプロダクトマネージャー詳細](ai-product-manager.md) 
