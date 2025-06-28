@@ -41,8 +41,9 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/data-scientist.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer"
+                           onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 データサイエンティストの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -92,8 +93,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/machine-learning-engineer.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 機械学習エンジニアの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -143,8 +144,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/ai-consultant.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 AIコンサルタントの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -194,8 +195,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/ai-architect.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 AI/MLアーキテクトの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -245,8 +246,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/ai-product-manager.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 AIプロダクトマネージャーの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -296,8 +297,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/data-engineer.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 データエンジニアの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -347,8 +348,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/ai-security-engineer.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 AIセキュリティエンジニアの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -398,8 +399,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/edge-ai-engineer.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 エッジAIエンジニアの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -449,8 +450,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/ai-trainer.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 AI研修・教育エンジニアの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -500,8 +501,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/mlops-engineer.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 MLOpsエンジニアの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -551,8 +552,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/computer-vision-engineer.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 コンピュータビジョンエンジニアの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -602,8 +603,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/nlp-engineer.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 自然言語処理エンジニアの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -653,8 +654,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/robotics-engineer.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 ロボティクスエンジニアの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -704,8 +705,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/ai-development-director.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 AI開発ディレクターの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -755,8 +756,8 @@
                     <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
                         <h3>📚 さらに詳しい情報</h3>
                         <a href="https://github.com/CentralEden/ai_training/blob/main/docs/careers/audio-engineer.md" 
-                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em;" 
-                           target="_blank">
+                           style="color: #ffd700; text-decoration: none; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: color 0.3s ease;" 
+                           target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#ffd700'">
                             🔗 音声・音響エンジニアの詳細キャリア情報を見る →
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
@@ -1181,6 +1182,17 @@
             modalTitle.textContent = career.title;
             modalContent.innerHTML = career.content;
             modal.style.display = 'block';
+            
+            // モーダル内のリンクが確実に動作するようにイベントリスナーを追加
+            setTimeout(() => {
+                const modalLinks = modalContent.querySelectorAll('a[target="_blank"]');
+                modalLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        window.open(this.href, '_blank', 'noopener,noreferrer');
+                    });
+                });
+            }, 100);
         }
 
         // イベントリスナーの設定
