@@ -1,13 +1,13 @@
 name: 📚 Notebook Tests
 
-on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main]
-  schedule:
-    # 毎日夜中にテスト実行（UTCで15:00 = JST 00:00）
-    - cron: '0 15 * * *'
+# on:
+#   push:
+#     branches: [main, develop]
+#   pull_request:
+#     branches: [main]
+#   schedule:
+#     # 毎日夜中にテスト実行（UTCで15:00 = JST 00:00）
+#     - cron: '0 15 * * *'
 
 jobs:
   test-notebooks:

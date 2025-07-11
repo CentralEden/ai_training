@@ -41,48 +41,6 @@ flake8 = "^6.0.0"
 nbqa = "^1.7.0"
 nbval = "^0.10.0"
 
-[tool.poetry.group.gpu-cuda12]
-optional = true
-
-[tool.poetry.group.gpu-cuda12.dependencies]
-# GPU環境用（CUDA 12.x）
-torch = {version = "^2.0.1", source = "pytorch-cuda12"}
-torchvision = {version = "^0.15.2", source = "pytorch-cuda12"}
-torchaudio = {version = "^2.0.1", source = "pytorch-cuda12"}
-
-[tool.poetry.group.gpu-cuda11]
-optional = true
-
-[tool.poetry.group.gpu-cuda11.dependencies]
-# GPU環境用（CUDA 11.x）
-torch = {version = "^2.0.1", source = "pytorch-cuda11"}
-torchvision = {version = "^0.15.2", source = "pytorch-cuda11"}
-torchaudio = {version = "^2.0.1", source = "pytorch-cuda11"}
-
-[tool.poetry.group.cpu]
-optional = true
-
-[tool.poetry.group.cpu.dependencies]
-# CPU環境用
-torch = {version = "^2.0.1", source = "pytorch-cpu"}
-torchvision = {version = "^0.15.2", source = "pytorch-cpu"}
-torchaudio = {version = "^2.0.1", source = "pytorch-cpu"}
-
-[[tool.poetry.source]]
-name = "pytorch-cuda12"
-url = "https://download.pytorch.org/whl/cu121"
-priority = "explicit"
-
-[[tool.poetry.source]]
-name = "pytorch-cuda11"
-url = "https://download.pytorch.org/whl/cu118"
-priority = "explicit"
-
-[[tool.poetry.source]]
-name = "pytorch-cpu"
-url = "https://download.pytorch.org/whl/cpu"
-priority = "explicit"
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
